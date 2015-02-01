@@ -24,7 +24,7 @@
 
 // Aldebaran
 //============================================================
-aldeba_in,96,181,4	script	Kafra Service	4_ALIZA.act,{
+aldeba_in,96,181,4	script	Kafra Service	4_ALIZA,{
 	cutin "kafra_05",2;
 	mes "[Kafra Leilah]";
 	mes "Hm...?";
@@ -155,7 +155,7 @@ geffen,203,123,2	script	Kafra Employee::geffen2	4_F_KAFRA4,{
 
 // Morocc
 //============================================================
-morocc,156,97,4	script	Kafra Employee::kaf_morocc	4_ALIZA.act,{
+morocc,156,97,4	script	Kafra Employee::kaf_morocc	4_ALIZA,{
 	cutin "kafra_05",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
@@ -185,7 +185,7 @@ morocc,160,258,4	script	Kafra::kaf_morocc2	4_F_KAFRA4,{
 
 // Payon
 //============================================================
-payon,181,104,4	script	Kafra Employee::kaf_payon	4_ALIZA.act,{
+payon,181,104,4	script	Kafra Employee::kaf_payon	4_ALIZA,{
 	cutin "kafra_05",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
