@@ -76,7 +76,7 @@ abbey01,260,70,35,30	monster	Zombie Slaughter	1864,1,0,0,1
 abbey01,260,70,35,30	monster	Ragged Zombie	1865,2,0,0,1
 abbey01,260,70,35,30	monster	Flame Skull	1869,1,0,0,1
 abbey01,260,70,35,30	monster	Ghoul	1036,4,0,0,1
-abbey01,260,100,35,30	monster	Banshee	1867,7,0,0,1
+abbey01,260,100,35,30	monster	Banshee	1867,300,0,0,1
 abbey01,260,100,35,30	monster	Hell Poodle	1866,1,0,0,1
 abbey01,260,100,35,30	monster	Zombie Slaughter	1864,1,0,0,1
 abbey01,260,100,35,30	monster	Ragged Zombie	1865,2,0,0,1
