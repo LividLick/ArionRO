@@ -113,7 +113,7 @@ prtg_cas04,275,160,0	script	#Lever_PR04	HIDDEN_NPC,{
 	next;
 	if(select("Pull.:Do not.") == 1) {
 		close2;
-		warp "prtg_cas04",259,265;
+		warp "prtg_cas04",280,265;
 		end;
 	}
 	close;
