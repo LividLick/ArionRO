@@ -29,10 +29,28 @@ OnInit:
 
 prontera,128,214,5	trader	Alchemist Shop#prt1	4_GEFFEN_09,{
 OnInit:
-	sellitem Spectacles;
+	sellitem Alcohol Creation Guide;
+	sellitem Bottle Grenade Creation Guide;
+	sellitem Acid Bottle Creation Guide;
+	sellitem Plant Bottle Creation Guide;
+	sellitem Marine Sphere Creation Guide;
+	sellitem Glistening Coat Creation Guide;
+	sellitem Condensed Potion Creation Guide;
+	sellitem Potion Creation Guide;
+	sellitem Medicine Bowl;
+	sellitem Empty Test Tube;
+	sellitem Empty Potion Bottle;
+	
 }
 
 prontera,130,216,5	trader	Blacksmith Shop#prt1	4_GEFFEN_13,{
 OnInit:
-	sellitem Spectacles;
+	sellitem Hammer of Blacksmith:
+	sellitem Iron Hammer;
+	sellitem Anvil;
+	sellitem Mini Furnace;
+	sellitem Golden Hammer;
+	sellitem Oridecon Anvil;
+	sellitem Oridecon Hammer;
+	sellitem Golden Anvil;
 }
