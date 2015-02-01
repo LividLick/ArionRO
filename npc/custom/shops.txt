@@ -8,7 +8,7 @@
 // Written by Tokeiburu
 //============================================================
 
-prontera,150,200,0	trader	Arion Trader#prt1	4_F_GELKA,{
+prontera,153,193,1	trader	Arion Trader#prt1	4_F_GELKA,{
 OnInit:
 	sellitem Spectacles;
 	sellitem Arrow;
