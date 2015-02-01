@@ -2096,7 +2096,7 @@ OnInit:
 //=======================================================
 // Cooking Addition
 //=======================================================
-prontera,143,211,1	trader	Chef Assistant#prt	8_F_GIRL,{
+prontera,169,228,5	trader	Chef Assistant#prt	8_F_GIRL,{
 OnInit:
 	sellitem Plain_Sauce;
 	sellitem Red_Spice;
