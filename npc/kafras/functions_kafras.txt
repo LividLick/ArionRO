@@ -122,7 +122,7 @@ function	script	F_Kafra	{
 		deletearray @K_Menu0$;
 		if (getarg(0) == 2) {
 			// Guild Kafra Menu override (free Teleport, free Storage, Free Cart)
-			setarray @K_Menu0$[0],"Use Storage","Use Guild Storage","Rent a Pushcart","Cancel";
+			setarray @K_Menu0$[0],"Use Storage","Use Guild Storage","Cancel";
 		} else {
 			switch (getarg(1)) {
 				// Save and Storage only
@@ -130,22 +130,22 @@ function	script	F_Kafra	{
 				// Storage only
 				case 2:	setarray @K_Menu0$[0],"Use Storage","Cancel"; break;
 				// No Teleport (Common)
-				case 3: setarray @K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Cancel"; break;
+				case 3: setarray @K_Menu0$[0],"Save","Use Storage","Cancel"; break;
 				// Case 4 is Einbroch no tele message.
 				// No save, or teleport. (Common)
-				case 5:	setarray @K_Menu0$[0],"Use Storage","Rent a Pushcart","Cancel"; break;
+				case 5:	setarray @K_Menu0$[0],"Use Storage","Cancel"; break;
 				// Storage and Check Other Information only.
 				case 6:	setarray @K_Menu0$[0],"Use Storage","Cancel"; break;
 				// Save, Storage, and Pushcart only (Kafra Warehouse)
-				case 7:	setarray @K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Cancel"; break;
+				case 7:	setarray @K_Menu0$[0],"Save","Use Storage","Cancel"; break;
 				// Save, Storage, Other Check information. (Turbo track)
 				case 8: setarray @K_Menu0$[0],"Save","Use Storage","Cancel"; break;
 				// No Save (Rune Knight)
-				case 9: setarray @K_Menu0$[0],"Use Storage","Rent a Pushcart","Cancel"; break;
+				case 9: setarray @K_Menu0$[0],"Use Storage","Cancel"; break;
 				// Storage, Save, and Pushcart (Dewata, reorder of case 7)
-				case 10: setarray @K_Menu0$[0],"Use Storage","Save","Rent a Pushcart","Cancel"; break;
+				case 10: setarray @K_Menu0$[0],"Use Storage","Save","Cancel"; break;
 				// Default message (obsolete)
-				default: setarray @K_Menu0$[0],"Save","Use Storage","Rent a Pushcart","Cancel"; break;
+				default: setarray @K_Menu0$[0],"Save","Use Storage","Cancel"; break;
 			}
 		}
 		.@menu$ = "";
@@ -161,9 +161,6 @@ function	script	F_Kafra	{
 			else
 				callfunc "F_KafStor",0,getarg(3),getarg(0),"[Kafra Employee]";
 			next;
-		} else if (@K_Menu0$[.@j] == "Rent a Pushcart") {
-			if(callfunc("F_KafCart",getarg(0),getarg(4),"[Kafra Employee]") == 1)
-				next;
 		} else if (@K_Menu0$[.@j] == "Cancel"){
 			callfunc "F_KafEnd",getarg(0),0;
 			end;

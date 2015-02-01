@@ -1,0 +1,26 @@
+//===== Hercules Script ======================================
+//= Hat Girl
+//===== By: ==================================================
+//= Toms and Tokeiburu
+//===== Current Version: =====================================
+//= 1.1
+//===== Description: =========================================
+//= Creates hats.
+//===== Additional Comments: =================================
+//= 1.1 Switched to 'getbattleflag', credits to Saithis. [Euphy]
+//============================================================
+
+prt_in,38,104,4	script	Hat Maker#custom_stylist	4_F_WANDERER,{
+	mes "Hello ^0000FF" + strcharinfo(0) + "^000000,";
+	mes " ";
+	mes "Do you want to leave the training ground?";
+	next;
+	
+	menu "I want to stay here", L_Close,
+	"Warp me to Prontera ^0000FF("+getmapusers("prontera")+")^000000", L_Warp;
+	
+L_Warp:
+	warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+L_Close:
+	close;
+}
