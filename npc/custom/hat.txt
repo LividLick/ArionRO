@@ -64,7 +64,6 @@ prt_in,38,104,5	script	Headgear Master	4_F_NYDHOG,{
 							
 							mes (.@hats[.@j * .@count + .@i + 1] - countitem(.@hats[.@j * .@count + .@i])) + " ^0000ff" + getitemname(.@hats[.@j * .@count + .@i]) + "^000000";
 							.@hasItems = 0;
-							close;
 						}
 					}
 				}
