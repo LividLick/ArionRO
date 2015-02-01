@@ -45,7 +45,7 @@ OnInit:
 
 prontera,130,216,5	trader	Blacksmith Shop#prt1	4_GEFFEN_13,{
 OnInit:
-	sellitem Hammer_Of_Blacksmith:
+	sellitem Hammer_Of_Blacksmith;
 	sellitem Iron_Hammer;
 	sellitem 986;
 	sellitem Portable_Furnace;
