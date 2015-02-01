@@ -110,7 +110,7 @@ aldeba_in,96,181,4	script	Kafra Service	4_ALIZA.act,{
 	end;
 }
 
-aldebaran,143,119,4	script	Kafra Employee::kaf_aldebaran	4_ALIZA.act,{
+aldebaran,143,119,4	script	Kafra Employee::kaf_aldebaran	4_ALIZA,{
 	cutin "kafra_05",2;
 	callfunc "F_KafSet";
 	mes "[Kafra Employee]";
