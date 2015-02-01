@@ -48,11 +48,11 @@ OnInit:
     sellitem Golden_Anvil;
 	sellitem Oridecon_Anvil;
 	sellitem 986;
-	sellitem Hammer_Of_Blacksmith;
 	sellitem Oridecon_Hammer;
 	sellitem Iron_Hammer;
 	sellitem Golden_Hammer;
 	sellitem Portable_Furnace;
+	sellitem Hammer_Of_Blacksmith;
 	
 	
 }
