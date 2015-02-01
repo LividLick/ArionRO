@@ -37,9 +37,10 @@ OnInit:
 	sellitem Coating_Create_Book;
 	sellitem Slim_Potion_Create_Book;
 	sellitem Slim_Potion_Create_Book;
+	sellitem Empty_Potion;
 	sellitem Medicine_Bowl;
 	sellitem Empty_Cylinder;
-	sellitem Empty_Potion;
+
 	
 }
 
