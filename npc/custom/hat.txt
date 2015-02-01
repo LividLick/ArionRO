@@ -28,7 +28,7 @@ prt_in,38,104,5	script	Headgear Master	4_F_NYDHOG,{
 		.@endIndex++;
 	}
 	
-	mes "[Headgear Master]";
+	mes "[Headgear Master] ";
 	mes "Hmm...?";
 	mes "You want to make a hat?";
 	next;
