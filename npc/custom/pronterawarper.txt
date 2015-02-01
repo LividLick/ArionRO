@@ -1,0 +1,26 @@
+//===== Hercules Script ======================================
+//= Prontera Warper
+//===== By: ==================================================
+//= Tokeiburu
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= A warper for the novice ground.
+//===== Additional Comments: =================================
+//= 1.0 Initial script.
+//============================================================
+
+new_1-1,51,111,4	script	Prontera Warper	4_F_WANDERER,{
+	mes "Hello ^0000FF" + strcharinfo(0) + "^000000,";
+	mes " ";
+	mes "Do you want to leave the training ground?";
+	next;
+	
+	menu "I want to stay here", L_Close,
+	"Warp me to Prontera ^0000FF("+getmapusers("prontera")+")^000000", L_Warp;
+	
+L_Warp:
+	warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+L_Close:
+	close;
+}
