@@ -57,3 +57,8 @@ OnInit:
 	
 	
 }
+
+prontera,144,230,4	trader	Ninja Shop#prt1	4_M_NINJA_BLUE,{
+OnInit:
+    sellitem Golden_Anvil;
+	
