@@ -8,85 +8,85 @@
 // Written by Tokeiburu
 //============================================================
 
-prontera,152,193,1	trader	Arion Trader#prt1	4_F_GELKA,{
+prontera,152,193,1	trader	Arion Trader	4_F_GELKA,{
 OnInit:
-	sellitem Spectacles;
-	sellitem Arrow;
-	sellitem 1771;
-	sellitem Fire_Arrow_Container;
-	sellitem Holy_Arrow_Quiver;
-	sellitem Red_Potion;
-	sellitem Orange_Potion;
-	sellitem Yellow_Potion;
-	sellitem White_Potion;
-	sellitem Green_Potion;
-	sellitem Center_Potion;
-	sellitem Awakening_Potion;
-	sellitem Wing_Of_Fly;
-	sellitem Wing_Of_Butterfly;
-	sellitem Booby_Trap;
-	sellitem Blue_Gemstone;
-	sellitem Red_Gemstone;
-	sellitem Yellow_Gemstone;
+	sellitem Spectacles,-1;
+	sellitem Arrow,-1;
+	sellitem 1771,-1;
+	sellitem Fire_Arrow_Container,-1;
+	sellitem Holy_Arrow_Quiver,-1;
+	sellitem Red_Potion,-1;
+	sellitem Orange_Potion,-1;
+	sellitem Yellow_Potion,-1;
+	sellitem White_Potion,-1;
+	sellitem Green_Potion,-1;
+	sellitem Center_Potion,-1;
+	sellitem Awakening_Potion,-1;
+	sellitem Wing_Of_Fly,-1;
+	sellitem Wing_Of_Butterfly,-1;
+	sellitem Booby_Trap,-1;
+	sellitem Blue_Gemstone,-1;
+	sellitem Red_Gemstone,-1;
+	sellitem Yellow_Gemstone,-1;
 }
 
 prt_in,126,76,6	duplicate(Arion Trader)	Arion Trader#inprt1	4_F_GELKA
 
 prontera,128,214,5	trader	Alchemist Shop#prt1	4_GEFFEN_09,{
 OnInit:
-	sellitem Alcol_Create_Book;
-	sellitem FireBottle_Create_Book;
-	sellitem Acid_Create_Book;
-	sellitem Plant_Create_Book;
-	sellitem Mine_Create_Book;
-	sellitem Coating_Create_Book;
-	sellitem Slim_Potion_Create_Book;
-	sellitem Slim_Potion_Create_Book;
-	sellitem Empty_Potion;
-	sellitem Medicine_Bowl;
-	sellitem Empty_Cylinder;
+	sellitem Alcol_Create_Book,-1;
+	sellitem FireBottle_Create_Book,-1;
+	sellitem Acid_Create_Book,-1;
+	sellitem Plant_Create_Book,-1;
+	sellitem Mine_Create_Book,-1;
+	sellitem Coating_Create_Book,-1;
+	sellitem Slim_Potion_Create_Book,-1;
+	sellitem Slim_Potion_Create_Book,-1;
+	sellitem Empty_Potion,-1;
+	sellitem Medicine_Bowl,-1;
+	sellitem Empty_Cylinder,-1;
 
 	
 }
 
 prontera,130,216,5	trader	Blacksmith Shop#prt1	4_GEFFEN_13,{
 OnInit:
-    sellitem Golden_Anvil;
-	sellitem Oridecon_Anvil;
-	sellitem 986;
-	sellitem Oridecon_Hammer;
-	sellitem Golden_Hammer;
-	sellitem Iron_Hammer;
-	sellitem Portable_Furnace;
-	sellitem Hammer_Of_Blacksmith;
+    sellitem Golden_Anvil,-1;
+	sellitem Oridecon_Anvil,-1;
+	sellitem 986,-1;
+	sellitem Oridecon_Hammer,-1;
+	sellitem Golden_Hammer,-1;
+	sellitem Iron_Hammer,-1;
+	sellitem Portable_Furnace,-1;
+	sellitem Hammer_Of_Blacksmith,-1;
 	
 	
 }
 
 prontera,144,230,4	trader	Ninja Shop#prt1	4_M_NINJA_BLUE,{
 OnInit:
-    sellitem Improved_Arm_Guard_;
-	sellitem Flame_Stone;
-	sellitem Ice_Stone;
-	sellitem Wind_Stone;
-	sellitem Shadow_Orb;
-	sellitem Flash_Shuriken;
-	sellitem Nimbus_Shuriken;
-	sellitem Sharp_Leaf_Shuriken;
-	sellitem 13250;
-	sellitem Thorn_Needle_Shuriken;
+    sellitem Improved_Arm_Guard_,-1;
+	sellitem Flame_Stone,-1;
+	sellitem Ice_Stone,-1;
+	sellitem Wind_Stone,-1;
+	sellitem Shadow_Orb,-1;
+	sellitem Flash_Shuriken,-1;
+	sellitem Nimbus_Shuriken,-1;
+	sellitem Sharp_Leaf_Shuriken,-1;
+	sellitem 13250,-1;
+	sellitem Thorn_Needle_Shuriken,-1;
 }
 
 prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_GUNSLINGER,{
 OnInit:
-    sellitem 13102;
-	sellitem 13155;
-	sellitem 13200;
-	sellitem 13151;
-	sellitem 13165;
-	sellitem 13163;
-	sellitem 13154;
-	sellitem 13168;
-	sellitem Silver_Bullet;
-	sellitem Shell_Of_Blood;
+    sellitem 13102,-1;
+	sellitem 13155,-1;
+	sellitem 13200,-1;
+	sellitem 13151,-1;
+	sellitem 13165,-1;
+	sellitem 13163,-1;
+	sellitem 13154,-1;
+	sellitem 13168,-1;
+	sellitem Silver_Bullet,-1;
+	sellitem Shell_Of_Blood,-1;
 }
