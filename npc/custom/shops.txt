@@ -65,4 +65,23 @@ OnInit:
 	sellitem Ice_Stone;
 	sellitem Wind_Stone;
 	sellitem Shadow_Orb;
+	sellitem Flash_Shuriken;
+	sellitem Nimbus_Shuriken;
+	sellitem Sharp_Leaf_Shuriken;
+	sellitem 13250;
+	sellitem Thorn_Needle_Shuriken;
+}
+
+prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_JOB_HUNTER,{
+OnInit:
+    sellitem 13102;
+	sellitem 13155;
+	sellitem 13200;
+	sellitem 13151;
+	sellitem 13165;
+	sellitem 13163;
+	sellitem 13154;
+	sellitem 13168;
+	sellitem Silver_Bullet;
+	sellitem Shell_Of_Blood;
 }
