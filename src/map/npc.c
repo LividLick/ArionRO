@@ -4483,9 +4483,24 @@ bool npc_unloadfile( const char* filepath ) {
 	DBIterator * iter = db_iterator(npc->name_db);
 	struct npc_data* nd = NULL;
 	bool found = false;
+	char npcPath[512] = "npc/";
+	char customPath[512] = "npc/custom/";
+
+	strcat(npcPath, filepath);
+	strcat(customPath, filepath);
 
 	for( nd = dbi_first(iter); dbi_exists(iter); nd = dbi_next(iter) ) {
 		if( nd->path && strcasecmp(nd->path,filepath) == 0 ) { // FIXME: This can break in case-sensitive file systems
+			found = true;
+			npc->unload_duplicates(nd);/* unload any npcs which could duplicate this but be in a different file */
+			npc->unload(nd, true);
+		}
+		else if ( nd->path && strcasecmp(nd->path,npcPath) == 0 ) {
+			found = true;
+			npc->unload_duplicates(nd);/* unload any npcs which could duplicate this but be in a different file */
+			npc->unload(nd, true);
+		}
+		else if ( nd->path && strcasecmp(nd->path,customPath) == 0 ) {
 			found = true;
 			npc->unload_duplicates(nd);/* unload any npcs which could duplicate this but be in a different file */
 			npc->unload(nd, true);

@@ -295,7 +295,7 @@ OnNPCKillEvent:
 	end;
 
 OnInit:
-	set .Delay,12;		// Quest delay, in hours (0 to disable).
+	set .Delay,0;		// Quest delay, in hours (0 to disable).
 	set .Quests,4;		// Number of subquests per mission (increases rewards).
 	set .Party,3;		// Party options: 0 (exclude party kills), 1 (include party kills), 2 (same map only), 3 (screen area only)
 	set .Reset,-1;		// Reset options: -1 (abandoning mission sets delay time), 0 (no delay time), [Zeny] (cost to abandon mission, no delay time)

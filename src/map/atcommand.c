@@ -4180,22 +4180,38 @@ ACMD(hidenpc)
 ACMD(loadnpc)
 {
 	FILE *fp;
+	char filepath[512];
+	char npcPath[512] = "npc/";
+	char customPath[512] = "npc/custom/";
 
 	if (!message || !*message) {
 		clif->message(fd, msg_txt(1132)); // Please enter a script file name (usage: @loadnpc <file name>).
 		return false;
 	}
 
+	safestrncpy(filepath, message, 511);
+
+	strcat(npcPath, filepath);
+	strcat(customPath, filepath);
+
 	// check if script file exists
-	if ((fp = fopen(message, "r")) == NULL) {
-		clif->message(fd, msg_txt(261));
-		return false;
+	if ((fp = fopen(filepath, "r")) == NULL) {
+		safestrncpy(filepath, npcPath, 511);
+
+		if ((fp = fopen(filepath, "r")) == NULL) {
+			safestrncpy(filepath, customPath, 511);
+
+			if ((fp = fopen(filepath, "r")) == NULL) {
+				clif->message(fd, msg_txt(261));
+				return false;
+			}
+		}
 	}
 	fclose(fp);
 
 	// add to list of script sources and run it
-	npc->addsrcfile(message);
-	npc->parsesrcfile(message,true);
+	npc->addsrcfile(filepath);
+	npc->parsesrcfile(filepath,true);
 	npc->read_event_script();
 
 	clif->message(fd, msg_txt(262));
@@ -8567,6 +8583,18 @@ ACMD(unloadnpcfile)
 	}
 	return true;
 }
+
+ACMD(reload)
+{
+	if (atcommand_unloadnpcfile(fd, sd, command, message, info)) {
+		if (atcommand_loadnpc(fd, sd, command, message, info)) {
+			return true;
+		}
+	}
+	
+	return false;
+}
+
 ACMD(cart) {
 #define MC_CART_MDFY(x,idx) do { \
 	sd->status.skill[idx].id = (x)?MC_PUSHCART:0; \
@@ -9582,6 +9610,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF(costume),
 		ACMD_DEF(skdebug),
 		ACMD_DEF(cddebug),
+		ACMD_DEF(reload),
 	};
 	int i;
 
