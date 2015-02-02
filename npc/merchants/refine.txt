@@ -1180,7 +1180,7 @@ sch_gld,340,80,7	script	Repairman#sch_gld	4_M_04,{
 	end;
 }
 
-prontera,140,226,4	script	Repairman#sch_gld	4_M_04,{
+prontera,140,226,4	script	Repairman#prontera	4_M_04,{
 	callfunc "repairmain","Repairman";
 	end;
 }

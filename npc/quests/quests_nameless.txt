@@ -86,7 +86,7 @@ OnTouch:
 	end;
 }
 
-airplane_01,95,61,3	script	Agent#pc1	4_M_HU_02,{
+airplane_01,95,61,3	script	Agent#pc1	4_M_HUMAN_01,{
 	end;
 
 OnInit:

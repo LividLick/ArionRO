@@ -2368,8 +2368,8 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 		mes "Why don't you speak to the Helper to the left side of this room first, so that you can receive some battle instruction?";
 		close;
 	}
-	else if (nov_2nd_cos != 0) {
-	//else if (nov_2nd_cos > 0 && nov_2nd_cos < 21) {
+	//else if (nov_2nd_cos != 0) {
+	else if (nov_2nd_cos > 0 && nov_2nd_cos < 21) {
 		mes "[Muriel]";
 		mes "Field Combat Training is an actual fight class where you can gain basic fighting skills that you can use to defend yourself in Rune-Midgard.";
 		next;
@@ -2538,6 +2538,9 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 			close;
 		}
 	}
+	OnInit:
+	setmapflag "new_3-1", mf_loadevent;
+	end;
 }
 
 //Teleport NPC
@@ -2548,12 +2551,6 @@ new_1-3,95,30,4	script	Trainer#nv1::NovHoffman	4_M_02,{
 	mes "you with a little instruction.";
 	next;
 	mes "[Hoffman]";
-	mes "These monsters are all weak";
-	mes "and easy to kill. But be careful,";
-	mes "a lot of them are aggressive";
-	mes "and out for blood!";
-	next;
-	mes "[Hoffman]";
 	mes "If you think monsters here are too weak for you, I can send you to another training ground where the monsters are stronger than the ones over here.";
 	next;
 	mes "[Hoffman]";
@@ -2562,47 +2559,58 @@ new_1-3,95,30,4	script	Trainer#nv1::NovHoffman	4_M_02,{
 	mes "Novices. So would you";
 	mes "like to try?";
 	next;
-	switch(select("I do want more of a challenge~:I wanna fight tough monsters!:Cancel")) {
+	switch(select("I wanna fight tougher monsters!:I want to leave this place:Cancel")) {
 	case 1:
 		mes "[Hoffman]";
 		mes "I see, then let me guide";
-		mes "you to a training ground that has stronger monsters. May God be with you...";
+		mes "you to a training ground that has stronger monsters!";
 		next;
 		if (strnpcinfo(2) == "nv1") {
-			if (rand(2)) {
-				warp "new_2-3",96,21;
-			}
-			else {
-				warp "new_3-3",96,21;
-			}
+			warp "new_4-3",96,21;
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv2") {
+			warp "new_4-3",96,21;
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv3") {
+			warp "new_4-3",96,21;
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv4") {
+			warp "new_5-3",96,21;
+			message strcharinfo(0), "There are one training ground remaining.";
 		}
 		else {
-			warp "new_1-3",96,21;
+			mes "[Hoffman]";
+			mes "There are no more available grounds!";
+			mes "Want to stay here and train more?";
+			next;
+			switch(select("I wanna fight tougher monsters!:Stay here")) {
+				case 1:
+					mes "[Hoffman]";
+					mes "Here you go! Good luck~";
+					savepoint "prontera",154 + rand(1, 4),205 - rand(1, 4);
+					warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+					end;
+				case 2:
+					close;
+			}
 		}
 		end;
 	case 2:
-		mes "[Hoffman]";
-		mes "You must like ";
-		mes "rough challenges,";
-		mes "don't you? Please";
-		mes "be careful, it can get";
-		mes "pretty difficult...";
+	mes "[Hoffman]";
+		mes "These training maps are quick to learn exp and you won't be able to come back here if you leave.";
 		next;
-		if (strnpcinfo(2) == "nv1" || strnpcinfo(2) == "nv2" || strnpcinfo(2) == "nv3") {
-			if (rand(2)) {
-				warp "new_4-3",96,21;
-			}
-			else {
-				warp "new_5-3",96,21;
-			}
-		}
-		else {
-			if (rand(2)) {
-				warp "new_2-3",96,21;
-			}
-			else {
-				warp "new_3-3",96,21;
-			}
+		switch(select("I will be fine, send to Prontera!:Stay here")) {
+			case 1:
+				mes "[Hoffman]";
+				mes "Here you go! Good luck~";
+				savepoint "prontera",154 + rand(1, 4),205 - rand(1, 4);
+				warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+				end;
+			case 2:
+				close;
 		}
 		end;
 	case 3:
@@ -2612,6 +2620,24 @@ new_1-3,95,30,4	script	Trainer#nv1::NovHoffman	4_M_02,{
 		mes "to more challenging places? That's understandable, since you're still a new adventurer. Good luck~";
 		close;
 	}
+	end;
+	OnPCLoadMapEvent:
+	if (strnpcinfo(2) == "nv1") {
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv2") {
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv3") {
+			message strcharinfo(0), "There are two training grounds remaining.";
+		}
+		else if (strnpcinfo(2) == "nv4") {
+			message strcharinfo(0), "There is one training ground remaining.";
+		}
+		else if (strnpcinfo(2) == "nv5") {
+			message strcharinfo(0), "There is last training ground.";
+		}
+	end;
 }
 
 new_2-3,95,30,4	duplicate(NovHoffman)	Trainer#nv2	4_M_02
@@ -2627,21 +2653,50 @@ new_1-3,96,174,3	script	Test Examiner#nv1::NovKeyman	4_M_03,{
 	mes "Would you like to move";
 	mes "to the next course?";
 	next;
-	switch(select("Yes:No")) {
-	case 1:
-		mes "[Keyman]";
-		mes "I hope you will be";
-		mes "a good fighter in the";
-		mes "future. Bon voyage.";
-		close2;
-		warp "new_1-4",99,10;
-		return
-		end;
-	case 2:
-		mes "[Keyman]";
-		mes "I see...";
-		mes "It can't hurt to practice until you're more comfortable with the basics of battle.";
-		close;
+	if (strnpcinfo(2) == "nv5") {
+		switch(select("I'm ready for my adventure!:Let me stay here a little longer...")) {
+		case 1:
+			mes "[Keyman]";
+			mes "I hope you will be";
+			mes "a good fighter in the";
+			mes "future. Bon voyage.";
+			close2;
+			savepoint "prontera",154 + rand(1, 4),205 - rand(1, 4);
+			warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+			return
+			end;
+		case 2:
+			mes "[Keyman]";
+			mes "I see...";
+			mes "It can't hurt to practice until you're more comfortable with the basics of battle.";
+			close;
+		}
+	}
+	else {
+		switch(select("Yes:Let me stay here a little longer...")) {
+		case 1:
+			if (strnpcinfo(2) == "nv1") {
+				warp "new_2-3",96,21;
+			}
+			else if (strnpcinfo(2) == "nv2") {
+				warp "new_3-3",96,21;
+			}
+			else if (strnpcinfo(2) == "nv3") {
+				warp "new_4-3",96,21;
+			}
+			else if (strnpcinfo(2) == "nv4") {
+				warp "new_5-3",96,21;
+			}
+			else {
+				warp "new_5-3",96,21;
+			}
+			end;
+		case 2:
+			mes "[Keyman]";
+			mes "I see...";
+			mes "It can't hurt to practice until you're more comfortable with the basics of battle.";
+			close;
+		}
 	}
 }
 
@@ -4115,7 +4170,7 @@ new_1-4,91,22,4	script	Bruce#nv	1_M_LIBRARYMASTER,{
 }
 
 // Training Ground Mobs
-new_1-3,0,0,0,0	monster	Poring	1002,10,0,0,0
+new_1-3,0,0,0,0	monster	Poring	1002,20,0,0,0
 new_1-3,0,0,0,0	monster	Drops	1113,10,0,0,0
 new_1-3,0,0,0,0	monster	Lunatic	1063,10,0,0,0
 new_1-3,0,0,0,0	monster	ChonChon	1011,10,0,0,0
@@ -4135,11 +4190,14 @@ new_5-3,0,0,0,0	monster	Rocker	1052,10,0,0,0
 new_5-3,0,0,0,0	monster	Thief Bug	1051,1,0,0,0
 new_5-3,0,0,0,0	monster	Thief Bug	1053,1,0,0,0
 new_5-3,0,0,0,0	monster	Spore	1014,1,0,0,0
-new_1-3,0,0,0,0	monster	Fabre	1184,5,0,0,0
-new_2-3,0,0,0,0	monster	Fabre	1184,5,0,0,0
-new_3-3,0,0,0,0	monster	Fabre	1184,5,0,0,0
-new_4-3,0,0,0,0	monster	Fabre	1184,5,0,0,0
-new_5-3,0,0,0,0	monster	Fabre	1184,5,0,0,0
+//new_1-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
+//new_2-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
+//new_3-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
+//new_4-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
+//new_5-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
+
+new_1-3,0,0,0,0	monster	Poring Master	3001,1,0,0,0
+new_2-3,0,0,0,0	monster	Poring Master	3001,2,0,0,0
 
 //============================================================
 // Old changelog
