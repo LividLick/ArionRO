@@ -77,7 +77,7 @@ OnInit:
 	sellitem Thorn_Needle_Shuriken;
 }
 
-prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_JOB_HUNTER,{
+prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_GUNSLINGER,{
 OnInit:
     sellitem 13102;
 	sellitem 13155;
