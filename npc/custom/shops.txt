@@ -12,6 +12,9 @@ prontera,152,193,1	trader	Arion Trader#prt1	4_F_GELKA,{
 OnInit:
 	sellitem Spectacles;
 	sellitem Arrow;
+	sellitem 1771;
+	sellitem Fire_Arrow_Container;
+	sellitem Holy_Arrow_Quiver;
 	sellitem Red_Potion;
 	sellitem Orange_Potion;
 	sellitem Yellow_Potion;
