@@ -23,11 +23,14 @@ function Go; function Disp; function Pick; function Restrict;
 //	Main Menu:
 // --------------------------------------------------
 
-menu	"Last Warp ^777777["+lastwarp$+"]^000000",-,
-	" ~ Towns",Towns, " ~ Fields",Fields, " ~ Dungeons",Dungeons,
-	" ~ Guild Castles",Castles, " ~ Guild Dungeons",Guild_Dungeons,
-	" ~ Instances",Instances, " ~ Special Areas",Special;
+menu	
+	"Prontera ^0000FF("+getmapusers("prontera")+")^000000",ProntWarp,
+	"Towns",Towns, "Dungeons",Dungeons,
+	"Last Warp ^777777["+lastwarp$+"]^000000",LastWarp;
+	//" ~ Guild Castles",Castles, " ~ Guild Dungeons",Guild_Dungeons;
+	//" ~ Instances",Instances, " ~ Special Areas",Special;
 
+LastWarp:
 	if (lastwarp$ == "")
 		message strcharinfo(0),"You haven't warped anywhere yet.";
 	else
@@ -106,6 +109,12 @@ function Restrict {
 	}
 	return;
 }
+
+// --------------------------------------------------
+	ProntWarp: Go("prontera",154 + rand(1, 4),205 - rand(1, 4));
+	return;
+// --------------------------------------------------
+
 
 // --------------------------------------------------
 	Towns:
