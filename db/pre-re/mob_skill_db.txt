@@ -5570,6 +5570,7 @@
 3001,Poring Master@HP_ASSUMPTIO,attack,361,5,5000,1000,10000,no,friend,friendhpltmaxrate,100,,,,,,,
 3001,Poring Master@HP_ASSUMPTIO,chase,361,5,5000,1000,5000,no,friend,friendhpltmaxrate,100,,,,,,,
 3001,Poring Master@HP_ASSUMPTIO,idle,361,5,5000,1000,5000,no,friend,friendhpltmaxrate,100,,,,,,,
+3001,Poring Master@AL_TELEPORT,idle,26,1,500,0,5000,yes,self,always,0,,,,,,,
 3003,Anubis@NPC_CRITICALWOUND,attack,673,2,500,0,5000,yes,target,always,0,,,,,,,
 3003,Anubis@NPC_BLINDATTACK,chase,177,3,2000,0,5000,yes,target,always,0,,,,,,,
 3003,Anubis@NPC_CURSEATTACK,chase,181,1,1000,800,5000,yes,target,always,0,,,,,,,
