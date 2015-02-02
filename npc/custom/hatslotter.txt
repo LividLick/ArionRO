@@ -10,7 +10,7 @@
 //= 
 //============================================================
 
-prt_in,42,109,5	script	Headgear Master2#slot	4_F_NYDHOG,{
+prt_in,45,96,2	script	Headgear Master2#slot	4_F_NYDHOG,{
 	setarray .@hats,
 		2284,	923,20,0,0,0,0,0,0,0,0,0,0,
 		5110,	526,2,7270,1,941,1,10004,1,0,0,0,0;
