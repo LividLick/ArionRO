@@ -60,5 +60,9 @@ OnInit:
 
 prontera,144,230,4	trader	Ninja Shop#prt1	4_M_NINJA_BLUE,{
 OnInit:
-    sellitem Golden_Anvil;
+    sellitem Improved_Arm_Guard_
+	sellitem Flame_Stone
+	sellitem Ice_Stone
+	sellitem Wind_Stone
+	sellitem Shadow_Orb
 }
