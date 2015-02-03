@@ -2063,8 +2063,8 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 		dispbottom "Talk to the Helper on the left side of this room.";
 		close;
 	}
-	else if (nov_2nd_cos != 0) {
-	//else if (nov_2nd_cos > 0 && nov_2nd_cos < 21) {
+	//else if (nov_2nd_cos != 0) {
+	else if (nov_2nd_cos > 0 && nov_2nd_cos < 21) {
 		mes "[Muriel]";
 		mes "Field Combat Training is an actual fight class where you can gain basic fighting skills that you can use to defend yourself in Rune-Midgard.";
 		next;
@@ -2127,7 +2127,7 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 				equip .@items[.@i];
 			}
 			
-			delitem 5055,countitem(5055);	// Remove eggshells
+			delitem 5055,countitem(5055);
 			
 			percentheal 100,0;
 			savepoint "new_1-2",23,188;
@@ -2195,6 +2195,17 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 			percentheal 100,0;
 			getitem 569,50; //Novice_Potion
 			close2;
+			
+			setarray .@items,13075,1675,2112,2510,2352,2414,19000;
+			
+			for (.@i = 0; .@i < getarraysize(.@items); .@i++) {
+				delitem .@items[.@i],countitem(.@items[.@i]);
+				getitem .@items[.@i],1;
+				equip .@items[.@i];
+			}
+			
+			delitem 5055,countitem(5055);
+			
 			warp "new_1-3",96,21;
 			end;
 		case 2:
@@ -2223,6 +2234,17 @@ new_1-2,38,182,3	script	Entrance Guard#nv	4_F_03,{
 			mes "be careful!";
 			percentheal 100,0;
 			close2;
+			
+			setarray .@items,13075,1675,2112,2510,2352,2414,19000;
+			
+			for (.@i = 0; .@i < getarraysize(.@items); .@i++) {
+				delitem .@items[.@i],countitem(.@items[.@i]);
+				getitem .@items[.@i],1;
+				equip .@items[.@i];
+			}
+			
+			delitem 5055,countitem(5055);
+			
 			warp "new_1-3",96,21;
 			end;
 		case 2:
@@ -2394,7 +2416,7 @@ new_1-4,91,22,4	script	Bruce#nv	1_M_LIBRARYMASTER,{
 new_1-3,0,0,0,0	monster	Poring	1002,20,0,0,0
 new_1-3,0,0,0,0	monster	Drops	1113,15,0,0,0
 new_1-3,0,0,0,0	monster	Lunatic	1063,15,0,0,0
-new_1-3,0,0,0,0	monster	Fanta Poring	1011,15,0,0,0
+new_1-3,0,0,0,0	monster	Fanta	3006,20,0,0,0
 new_2-3,0,0,0,0	monster	Condor	1009,10,0,0,0
 new_2-3,0,0,0,0	monster	Picky	1050,10,0,0,0
 new_2-3,0,0,0,0	monster	Willow	1010,10,0,0,0
@@ -2407,10 +2429,9 @@ new_4-3,0,0,0,0	monster	Rocker	1052,20,0,0,0
 new_4-3,0,0,0,0	monster	Thief Bug	1051,20,0,0,0
 new_4-3,0,0,0,0	monster	Thief Bug	1053,20,0,0,0
 new_4-3,0,0,0,0	monster	Spore	1014,20,0,0,0
-new_5-3,0,0,0,0	monster	Rocker	1052,20,0,0,0
-new_5-3,0,0,0,0	monster	Marin	3004,20,0,0,0
-new_5-3,0,0,0,0	monster	Poporing	3005,20,0,0,0
-new_5-3,0,0,0,0	monster	Cherry Poring	1014,20,0,0,0
+new_5-3,0,0,0,0	monster	Marin	3004,30,0,0,0
+new_5-3,0,0,0,0	monster	Poporing	3005,30,0,0,0
+new_5-3,0,0,0,0	monster	Cherry Poring	3007,30,0,0,0
 //new_1-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
 //new_2-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
 //new_3-3,0,0,0,0	monster	Fabre	1184,0,0,0,0
