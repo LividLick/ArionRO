@@ -81,12 +81,11 @@ OnInit:
 prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_GUNSLINGER,{
 OnInit:
     sellitem 13168,-1;
-    sellitem 13102,-1;
-	sellitem 13155,-1;
-	sellitem 13200,-1;
-	sellitem 13151,-1;
 	sellitem 13165,-1;
 	sellitem 13163,-1;
+    sellitem 13102,-1;
+	sellitem 13155,-1;
+	sellitem 13151,-1;
 	sellitem 13154,-1;
 	sellitem Shell_Of_Blood,-1;
 	sellitem Silver_Bullet,-1;
