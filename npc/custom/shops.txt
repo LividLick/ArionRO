@@ -34,13 +34,13 @@ prt_in,126,76,6	duplicate(Arion Trader)	Arion Trader#inprt1	4_F_GELKA
 
 prontera,128,214,5	trader	Alchemist Shop#prt1	4_GEFFEN_09,{
 OnInit:
+    sellitem Slim_Potion_Create_Book,-1;
 	sellitem Alcol_Create_Book,-1;
 	sellitem FireBottle_Create_Book,-1;
 	sellitem Acid_Create_Book,-1;
 	sellitem Plant_Create_Book,-1;
 	sellitem Mine_Create_Book,-1;
 	sellitem Coating_Create_Book,-1;
-	sellitem Slim_Potion_Create_Book,-1;
 	sellitem Slim_Potion_Create_Book,-1;
 	sellitem Empty_Potion,-1;
 	sellitem Medicine_Bowl,-1;
