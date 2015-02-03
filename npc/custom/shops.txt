@@ -83,8 +83,8 @@ OnInit:
     sellitem 13168,-1;
 	sellitem 13165,-1;
 	sellitem 13163,-1;
-    sellitem 13102,-1;
 	sellitem 13155,-1;
+	sellitem 13102,-1;
 	sellitem 13151,-1;
 	sellitem 13154,-1;
 	sellitem Shell_Of_Blood,-1;
