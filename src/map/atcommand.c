@@ -381,6 +381,14 @@ ACMD(send)
 #undef GET_VALUE
 }
 
+//ACMD(move) {
+//	char new_message[512];
+//	strcat(new_message, map->list[ sd->bl.m ].name);
+//	strcat(new_message, " ");
+//	strcat(new_message, message);
+//	atcommand_mapmove(fd, sd, command, new_message, info);
+//}
+
 /*==========================================
  * @rura, @warp, @mapmove
  *------------------------------------------*/
@@ -8586,13 +8594,8 @@ ACMD(unloadnpcfile)
 
 ACMD(reload)
 {
-	if (atcommand_unloadnpcfile(fd, sd, command, message, info)) {
-		if (atcommand_loadnpc(fd, sd, command, message, info)) {
-			return true;
-		}
-	}
-	
-	return false;
+	atcommand_unloadnpcfile(fd, sd, command, message, info);
+	return atcommand_loadnpc(fd, sd, command, message, info);
 }
 
 ACMD(cart) {
