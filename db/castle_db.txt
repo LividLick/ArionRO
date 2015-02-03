@@ -8,7 +8,7 @@
 // 03. CastleName                Name of the castle (used by scripts and guardian name tags).
 // 04. OnGuildBreakEventName     NPC unique name to invoke ::OnGuildBreak on, when a occupied
 //                               castle is abandoned during guild break.
-// 05. Flag                      Switch flag (reserved as of athena-dev mod0796~0801, not used by server).
+// 05. Flag                      Switch flag (reserved as of athena-dev mod0796~0801, not used by server).asdf
 
 
 //================
