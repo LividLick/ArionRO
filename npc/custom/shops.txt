@@ -66,15 +66,16 @@ OnInit:
 prontera,144,230,4	trader	Ninja Shop#prt1	4_M_NINJA_BLUE,{
 OnInit:
     sellitem Improved_Arm_Guard_,-1;
+	sellitem Shadow_Orb,-1;
 	sellitem Flame_Stone,-1;
 	sellitem Ice_Stone,-1;
 	sellitem Wind_Stone,-1;
-	sellitem Shadow_Orb,-1;
+	sellitem Thorn_Needle_Shuriken,-1;
 	sellitem Flash_Shuriken,-1;
 	sellitem Nimbus_Shuriken,-1;
 	sellitem Sharp_Leaf_Shuriken,-1;
 	sellitem 13250,-1;
-	sellitem Thorn_Needle_Shuriken,-1;
+	
 }
 
 prontera,146,232,4	trader	Gunslinger Shop#prt1	4_M_GUNSLINGER,{
@@ -90,3 +91,14 @@ OnInit:
 	sellitem Silver_Bullet,-1;
 	sellitem Shell_Of_Blood,-1;
 }
+
+prontera,183,214,4	trader	SuperNovice Shop#prt1	4_F_NOVICE,{
+OnInit:
+    sellitem Novice_Breast,-1;
+    sellitem Novice_Shield,-1;
+	sellitem Novice_Manteau,-1;
+	sellitem Star_Dust_Blade,-1;
+	sellitem Super_Novice_Hat_,-1:
+	
+}
+	
