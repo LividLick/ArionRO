@@ -90,7 +90,7 @@ OnInit:
 	sellitem 13154,-1;
 	sellitem Shell_Of_Blood,-1;
 	sellitem Silver_Bullet,-1;
-	sellitem sellitem 13200,-1;
+	sellitem 13200,-1;
 }
 
 prontera,183,214,4	trader	SuperNovice Shop#prt1	4_F_NOVICE,{
