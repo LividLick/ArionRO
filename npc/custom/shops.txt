@@ -99,7 +99,7 @@ OnInit:
 	sellitem Super_Novice_Hat_,-1;
     sellitem Novice_Shield,-1;
 	sellitem Hypnotist's_Staff_,-1;
-	sellitem Star_Dust_Blade_,-1;
+	sellitem 1148,-1;
 	
 }
 	
