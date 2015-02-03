@@ -1,2 +1,5 @@
 3004,Marin@NPC_WATERATTACK,attack,184,1,2000,0,5000,yes,target,always,0,,,,,,,
 3004,Marin@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,
+3006,Fanta@NPC_HOLYATTACK,attack,189,1,2000,0,5000,yes,target,always,0,,,,,,,
+3006,Fanta@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,
+3007,Cherry Poring@NPC_WATERATTACK,attack,186,3,2000,0,5000,yes,target,always,0,,,,,,,
