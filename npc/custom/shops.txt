@@ -98,7 +98,7 @@ OnInit:
     sellitem Novice_Shield,-1;
 	sellitem Novice_Manteau,-1;
 	sellitem Star_Dust_Blade,-1;
-	sellitem Super_Novice_Hat_,-1:
+	sellitem Super_Novice_Hat_,-1;
 	
 }
 	
