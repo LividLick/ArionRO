@@ -154,6 +154,11 @@ static inline const char* atcommand_help_string(AtCommandInfo *info) {
 	return info->help;
 }
 
+ACMD(update) {
+	system("git -C \"C:\\Users\\Sylvain\\Desktop\\SVN\\ArionRO4\\ArionRO\" pull");
+	clif->message(fd, "Changes updated.");
+	return true;
+}
 
 
 /*==========================================
@@ -9358,6 +9363,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF(jumpto),
 		ACMD_DEF(jump),
 		ACMD_DEF(who),
+		ACMD_DEF(update),
 		ACMD_DEF2("who2", who),
 		ACMD_DEF2("who3", who),
 		ACMD_DEF2("whomap", who),

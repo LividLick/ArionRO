@@ -110,3 +110,7 @@ Thumbs.db
 /vcproj-*/map-server
 /vcproj-*/mapcache
 /vcproj-*/plugin-*/
+/_ReSharper.Hercules-10/ConditionalNames/6/*.dat
+*.dat
+/_ReSharper.Hercules-10/PersistentCaches/*.sst
+/_ReSharper.Hercules-10/PersistentCaches/*.log
