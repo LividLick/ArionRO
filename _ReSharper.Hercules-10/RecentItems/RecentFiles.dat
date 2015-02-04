@@ -1,20 +1,13 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:grammar.c/l:..?3rdparty?libconfig?grammar.c" caret="21813" fromTop="13" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:libconfig.c/l:..?3rdparty?libconfig?libconfig.c" caret="1626" fromTop="19" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:console.c/l:..?src?common?console.c" caret="12172" fromTop="24" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:conf.h/l:..?src?common?conf.h" caret="3455" fromTop="20" />
-    <File id="D356871D-58E1-450B-967A-E4E9646175AF/f:cbasetypes.h/l:..?src?common?cbasetypes.h" caret="8410" fromTop="9" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:clif.h/l:..?src?map?clif.h" caret="1327" fromTop="27" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:itemdb.c/l:..?src?map?itemdb.c" caret="64458" fromTop="15" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:script.c/l:..?src?map?script.c" caret="115172" fromTop="16" />
-    <File id="D356871D-58E1-450B-967A-E4E9646175AF/f:mmo.h/l:..?src?common?mmo.h" caret="565" fromTop="18" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:atcommand.c/l:..?src?map?atcommand.c" caret="51553" fromTop="19" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:renewal.h/l:..?src?config?renewal.h" caret="772" fromTop="0" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:script.h/l:..?src?map?script.h" caret="7354" fromTop="19" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:mmo.h/l:..?src?common?mmo.h" caret="10959" fromTop="21" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:script.c/l:..?src?map?script.c" caret="1394" fromTop="19" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:atcommand.c/l:..?src?map?atcommand.c" caret="158821" fromTop="23" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:skill.c/l:..?src?map?skill.c" caret="0" fromTop="0" />
   </RecentFiles>
   <RecentEdits>
-    <File id="D356871D-58E1-450B-967A-E4E9646175AF/f:mmo.h/l:..?src?common?mmo.h" caret="565" fromTop="18" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:atcommand.c/l:..?src?map?atcommand.c" caret="51870" fromTop="20" />
-    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:renewal.h/l:..?src?config?renewal.h" caret="2816" fromTop="32" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:atcommand.c/l:..?src?map?atcommand.c" caret="4602" fromTop="21" />
+    <File id="D356871D-58E1-450B-967A-E6E9646175AF/f:script.c/l:..?src?map?script.c" caret="540955" fromTop="38" />
   </RecentEdits>
 </RecentFiles>

@@ -576,7 +576,7 @@ xmas,150,136,6	duplicate(Warper)	Warper#xmas	4_F_FAIRY
 yuno,162,47,4	duplicate(Warper)	Warper#yuno	4_F_FAIRY
 cmd_fild08,324,357,4	duplicate(Warper)	Warper#anthell	4_F_FAIRY
 ayo_fild02,275,154,4	duplicate(Warper)	Warper#ayofield	4_F_FAIRY
-ayo_dun02,154,246,4	duplicate(Warper)	Warper#ayodun	4_F_FAIRY
+//ayo_dun02,154,246,4	duplicate(Warper)	Warper#ayodun	4_F_FAIRY
 glast_01,195,289,6	duplicate(Warper)	Warper#glstHeim	4_F_FAIRY
 
 // --------------------------------------------------
