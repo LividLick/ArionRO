@@ -2082,6 +2082,7 @@ ayo_dun02,268,108,0	script	 #reward_tiger	HIDDEN_NPC,{
 		mes "up the box.^000000";
 		ayodunquest = 12;
 		completequest 12039;
+		getitem 20503,1;
 		getitem 603,1; //Old_Blue_Box
 		close;
 	}

@@ -1514,7 +1514,7 @@ lhz_cube,224,197,0	script	Experiment Tube#cube	HIDDEN_NPC,{
 			next;
 			input .@input$;
 			if (.@input$ == "Laboratory Permit") {
-				if (countitem(2657)) {
+				if (countitem(2657) || countitemall(20501)) {
 					mes "^3355FFYou insert the";
 					mes "Laboratory Permit";
 					mes "into the slot and the";

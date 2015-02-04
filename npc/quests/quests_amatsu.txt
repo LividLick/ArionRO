@@ -1699,10 +1699,6 @@ ama_in02,115,177,7	script	Soldier#ama10	8_M_JPNSOLDIER,{
 			}
 			close2;
 			
-			if (countitemall(20502) == 0) {
-				getitem 20502,1;
-			}
-			
 			warp "ama_dun01",229,10;
 			end;
 		}
@@ -1724,13 +1720,6 @@ ama_in02,115,177,7	script	Soldier#ama10	8_M_JPNSOLDIER,{
 			mes "That Transit Permit is from";
 			mes "the lord but I guess it has";
 			mes "been issued to the wrong person.";
-			next;
-			delitem 7160,1; //Lord's_Passable_Ticket
-			mes "[Jyuro]";
-			mes "I will keep this ticket because";
-			mes "it was issued without permission.";
-			mes "This is a warning.";
-			mes "Be careful.";
 			close;
 		}
 		mes "[Jyuro]";
@@ -1869,6 +1858,7 @@ ama_in02,200,176,4	script	Lord of Palace#ama	8_M_JPNMASTER,{
 			completequest 8135;
 			delitem 1022,1; //Fox_Tail
 			getitem 7160,1; //Lord's_Passable_Ticket
+			getitem 20502,1;
 			mes "[Ishida Yoshinaga]";
 			mes "This isn't a big reward but";
 			mes "someday it will be useful for you.";
