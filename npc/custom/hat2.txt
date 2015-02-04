@@ -64,9 +64,10 @@ function	script	ZenyToString	{
 
 prt_in,34,98,5	script	Headgear Master#_t	4_F_NYDHOG,{
 	setarray .@hats,
-		2284,	923,20,0,0,0,0,0,0,0,0,-1,1600050,
-		5034,	2213,1,2214,10,0,0,0,0,0,0,0,0,
-		5137,   7875,5,906,100,0,0,0,0,0,0,0,0;
+		5794,	7047,100,970,10,7291,1,0,0,0,0,0,
+		5785,	7291,1,970,10,719,10,0,0,0,0,-1,5000000,
+		5389,   7291,1,906,100,0,0,0,0,0,0,0,0;
+		
 	
 	.@count = 1 + 6 * 2;
 	.@endIndex = 0;
@@ -81,8 +82,8 @@ prt_in,34,98,5	script	Headgear Master#_t	4_F_NYDHOG,{
 	}
 	
 	mes "[Headgear Master] ";
-	mes "I can make any hat you wish for, as long as you bring me all the ingredients!";
-	mes "Which hat would you like to know more about?";
+	mes "I can make slotted Middle Head you wish for, as long as you bring me all the ingredients!";
+	mes "Which Middle Head would you like to know more about?";
 	next;
 	
 	while(1) {
