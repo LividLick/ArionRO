@@ -17,24 +17,52 @@
 //============================================================
 
 -	script	Warper	-1,{
-function Go; function Disp; function Pick; function Restrict;
+function LastWarpAvailable; function HasAnyQuestPasses; function Go; function Disp; function Pick; function Restrict;
 
 // --------------------------------------------------
 //	Main Menu:
 // --------------------------------------------------
 
+setarray @questmapinfo1$,
+	"Bio Lab","lhz_dun01",
+	"Amatsu Dungeon","ama_in02",
+	"Cursed Abbey","nameless_n";
+setarray @questmapinfo2,
+	150,288,
+	119,181,
+	256,215;
+setarray @questpasses,
+	20501,
+	20502,
+	20500;
+	
+	.@questsMenu$ = "";
+	
+	if (HasAnyQuestPasses()) {
+		.@questsMenu$ = "^D98300Quest Dungeons^000000";
+	}
+	
 menu	
 	"Prontera ^0000FF("+getmapusers("prontera")+")^000000",ProntWarp,
-	"Towns",Towns, "Dungeons",Dungeons,
-	"Last Warp ^777777["+lastwarp$+"]^000000",LastWarp;
+	"Last Warp ^0000FF("+lastwarp$+")^000000",LastWarp,
+	"Dungeons",Dungeons,
+	.@questsMenu$,Quest_Dungeons,
+	"Towns",Towns;
 	//" ~ Guild Castles",Castles, " ~ Guild Dungeons",Guild_Dungeons;
 	//" ~ Instances",Instances, " ~ Special Areas",Special;
 
 LastWarp:
 	if (lastwarp$ == "")
 		message strcharinfo(0),"You haven't warped anywhere yet.";
-	else
-		warp lastwarp$,lastwarpx,lastwarpy;
+	else {
+		if (LastWarpAvailable()) {
+			warp lastwarp$,lastwarpx,lastwarpy;
+		}
+		else {
+			mes "[Quest Dungeons]";
+			mes "^ff0000You do not have access to this map.^000000";
+		}
+	}
 	close;
 
 // ------------------- Functions -------------------
@@ -60,6 +88,26 @@ LastWarp:
 //	  at 0: use @c[0] and Pick() offset 1.
 // --------------------------------------------------
 
+function HasAnyQuestPasses {
+	for (.@i = 0; .@i < getarraysize(@questpasses); .@i++) {
+		if (countitemall(@questpasses[.@i]) > 0) {
+			return true;
+		}
+	}
+	
+	return false;
+}
+function LastWarpAvailable {
+	for (.@i = 0; .@i < getarraysize(@questpasses); .@i++) {
+		if (@questmapinfo1$[2 * .@i + 1] == lastwarp$) {
+			if (countitemall(@questpasses[.@i]) > 0)
+				return true;
+			return false;
+		}
+	}
+	
+	return true;
+}
 function Go {
 	warp getarg(0),getarg(1,0),getarg(2,0);
 	getmapxy(lastwarp$,lastwarpx,lastwarpy,0);
@@ -124,7 +172,7 @@ menu	"Prontera",T1, "Alberta",T2, "Aldebaran",T3, "Amatsu",T4, "Ayothaya",T5,
 	"Einbroch",T11, "El Dicastes",T12, "Geffen",T13, "Gonryun",T14, "Hugel",T15,
 	"Izlude",T16, "Jawaii",T17, "Lighthalzen",T18, "Louyang",T19, "Lutie",T20,
 	"Malangdo",T21, "Malaya",T22, "Manuk",T23, "Midgarts Expedition Camp",T24,
-	"Mora",T25, "Morroc",T26, "Moscovia",T27, "Nameless Island",T28,
+	"Mora",T25, "Morroc",T26, "Moscovia",T27,
 	"Niflheim",T29, "Payon",T30, "Rachel",T31, "Splendide",T32, "Thor Camp",T33,
 	"Umbala",T34, "Veins",T35, "Yuno",T36;
 
@@ -133,16 +181,16 @@ T2: Go("alberta",28,234);
 T3: Go("aldebaran",140,131);
 T4: Go("amatsu",198,84);
 T5: Go("ayothaya",208,166);
-T6: Restrict("RE");
+T6: //Restrict("RE");
 	Go("brasilis",196,217);
 T7: Go("comodo",209,143);
-T8: Restrict("RE");
+T8: //Restrict("RE");
 	Go("dewata",200,180);
-T9: Restrict("RE");
+T9: //Restrict("RE");
 	Go("ecl_in01",48,53);
 T10: Go("einbech",63,35);
 T11: Go("einbroch",64,200);
-T12: Restrict("RE");
+T12: //Restrict("RE");
 	Go("dicastes01",198,187);
 T13: Go("geffen",119,59);
 T14: Go("gonryun",160,120);
@@ -152,13 +200,13 @@ T17: Go("jawaii",251,132);
 T18: Go("lighthalzen",158,92);
 T19: Go("louyang",217,100);
 T20: Go("xmas",147,134);
-T21: Restrict("RE");
+T21: //Restrict("RE");
 	Go("malangdo",140,114);
-T22: Restrict("RE");
+T22: //Restrict("RE");
 	Go("malaya",212,206);
 T23: Go("manuk",282,138);
 T24: Go("mid_camp",210,288);
-T25: Restrict("RE");
+T25: //Restrict("RE");
 	Go("mora",55,146);
 T26: Go("morocc",156,93);
 T27: Go("moscovia",223,184);
@@ -261,9 +309,7 @@ F28: Restrict("Pre-RE",5,10);
 // --------------------------------------------------
 	Dungeons:
 // --------------------------------------------------
-menu	"Abyss Lakes",D1, "Amatsu Dungeon",D2, "Anthell",D3,
-	"Ayothaya Dungeon",D4, "Beach Dungeon",D5, "Bio Labs",D6,
-	"Brasilis Dungeon",D7, "Byalan Dungeon",D8, "Clock Tower",D9,
+menu	"Anthell",D3, "Ayothaya Dungeon",D4, "Beach Dungeon",D5, "Clock Tower",D9,
 	"Coal Mines",D10, "Culvert",D11, "Cursed Abbey",D12, "Dewata Dungeon",D13,
 	"Einbroch Dungeon",D14, "Gefenia",D15, "Geffen Dungeon",D16,
 	"Glast Heim",D17, "Gonryun Dungeon",D18, "Hidden Dungeon",D19,
@@ -273,6 +319,21 @@ menu	"Abyss Lakes",D1, "Amatsu Dungeon",D2, "Anthell",D3,
 	"Payon Dungeon",D30, "Pyramids",D31, "Rachel Sanctuary",D32,
 	"Scaraba Hole",D33, "Sphinx",D34, "Sunken Ship",D35, "Thanatos Tower",D36,
 	"Thor Volcano",D37, "Toy Factory",D38, "Turtle Dungeon",D39, "Umbala Dungeon",D40;
+	
+// "Brasilis Dungeon",D7, "Byalan Dungeon",D8, 
+
+//menu	"Amatsu Dungeon",D2, "Anthell",D3,
+//	"Ayothaya Dungeon",D4, "Beach Dungeon",D5, "Bio Labs",D6,
+//	"Brasilis Dungeon",D7, "Byalan Dungeon",D8, "Clock Tower",D9,
+//	"Coal Mines",D10, "Culvert",D11, "Cursed Abbey",D12, "Dewata Dungeon",D13,
+//	"Einbroch Dungeon",D14, "Gefenia",D15, "Geffen Dungeon",D16,
+//	"Glast Heim",D17, "Gonryun Dungeon",D18, "Hidden Dungeon",D19,
+//	"Ice Dungeon",D20, "Juperos",D21, "Kiel Dungeon",D22, "Louyang Dungeon",D23,
+//	"Magma Dungeon",D24, "Malangdo Dungeon",D25, "Moscovia Dungeon",D26,
+//	"Nidhogg's Dungeon",D27, "Odin Temple",D28, "Orc Dungeon",D29,
+//	"Payon Dungeon",D30, "Pyramids",D31, "Rachel Sanctuary",D32,
+//	"Scaraba Hole",D33, "Sphinx",D34, "Sunken Ship",D35, "Thanatos Tower",D36,
+//	"Thor Volcano",D37, "Toy Factory",D38, "Turtle Dungeon",D39, "Umbala Dungeon",D40;
 
 D1: setarray @c[2],261,272,275,270,116,27;
 	Disp("Abyss Lakes",1,3); Pick("abyss_");
@@ -296,8 +357,7 @@ D8: Restrict("RE",6);
 D9: setarray @c[2],199,159,148,283,65,147,56,155,297,25,127,169,277,178,268,74;
 	Disp("Clock Tower 1:Clock Tower 2:Clock Tower 3:Clock Tower 4:Basement 1:Basement 2:Basement 3:Basement 4");
 	Pick("","c_tower1","c_tower2","c_tower3","c_tower4","alde_dun01","alde_dun02","alde_dun03","alde_dun04");
-D10: setarray @c[2],52,17,381,343,302,262;
-	Disp("Coal Mines",1,3); Pick("mjo_dun");
+D10: Go("mjolnir_02",84,358);
 D11: setarray @c[2],131,247,19,19,180,169,100,92;
 	Disp("Culvert",1,4); Pick("","prt_sewb1","prt_sewb2","prt_sewb3","prt_sewb4");
 D12: setarray @c[2],51,14,150,11,120,10;
@@ -391,6 +451,27 @@ C6: setarray @c[2],293,100,288,252,97,196,137,90,71,315;
 	Disp("Himinn:Andlangr:Viblainn:Hljod:Skidbladnir");
 	Pick("","sch_gld","sch_gld","sch_gld","sch_gld","sch_gld");
 
+// --------------------------------------------------
+	Quest_Dungeons:
+// --------------------------------------------------
+.@questMenu$ = "";
+
+for (.@i = 0; .@i < getarraysize(@questpasses); .@i++) {
+	if (countitemall(@questpasses[.@i]) > 0) {
+		.@questMenu$ = .@questMenu$ + @questmapinfo1$[2 * .@i] + ":";
+	}
+	else {
+		.@questMenu$ = .@questMenu$ + ":";
+	}
+}
+
+.@j = select(.@questMenu$) - 1;
+
+Go(@questmapinfo1$[2 * .@j + 1],@questmapinfo2[2 * .@j],@questmapinfo2[2 * .@j + 1]);
+
+menu	"Baldur",Q1, "Luina",G2, "Valkyrie",G3, "Britoniah",G4,
+	"Arunafeltz",G5, "Schwaltzvalt",G6;
+	
 // --------------------------------------------------
 	Guild_Dungeons:
 // --------------------------------------------------

@@ -1711,6 +1711,7 @@ ra_temple,165,57,5	script	Niren#ss	4_F_MADAME,{
 				delitem 7755,1; //Research_Note
 				aru_monas = 26;
 				completequest 17017;
+				getitem 20500,1;
 				getexp (checkre(3))?50000:500000,0;
 				close2;
 			}

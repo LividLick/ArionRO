@@ -1656,7 +1656,7 @@ ama_in02,115,177,7	script	Soldier#ama10	8_M_JPNSOLDIER,{
 		close;
 	}
 	if (event_amatsu == 6) {
-		if (countitem(7160) > 0) {
+		if (countitem(7160) > 0 || countitemall(20502) > 0) {
 			mes "[Jyuro]";
 			mes "You have the ticket...";
 			mes "Do you want me to send you now, or do you need a little instruction?";
@@ -1698,6 +1698,11 @@ ama_in02,115,177,7	script	Soldier#ama10	8_M_JPNSOLDIER,{
 				mes "Take care of yourself...";
 			}
 			close2;
+			
+			if (countitemall(20502) == 0) {
+				getitem 20502,1;
+			}
+			
 			warp "ama_dun01",229,10;
 			end;
 		}
