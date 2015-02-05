@@ -73,3 +73,6 @@ bat_a02	mapflag	nowarp
 // Poring War ==================
 poring_w01	mapflag	nowarp
 poring_w02	mapflag	nowarp
+
+// Pronter Hat Shop ==============
+prt_in	mapflag	nowarp
