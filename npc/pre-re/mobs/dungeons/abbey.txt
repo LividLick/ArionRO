@@ -116,12 +116,12 @@ abbey02,232,220,46,58	monster	Necromancer	1870,1,0,0,1
 
 // Cursed Abbey Dungeon 3
 abbey03,0,0,0,0	boss_monster	Beelzebub	1873,1,43200000,600000,1
-abbey03,120,212,116,24	monster	Necromancer	1870,10,0,0,1
+abbey03,120,212,116,24	monster	Necromancer	1870,20,0,0,1
 abbey03,120,212,116,24	monster	Banshee	1867,10,0,0,1
 abbey03,120,212,116,24	monster	Flame Skull	1869,5,0,0,1
-abbey03,122,152,111,36	monster	Necromancer	1870,20,0,0,1
+abbey03,122,152,111,36	monster	Necromancer	1870,30,0,0,1
 abbey03,122,152,111,36	monster	Banshee	1867,10,0,0,1
 abbey03,122,152,111,36	monster	Flame Skull	1869,10,0,0,1
-abbey03,120,64,117,53	monster	Necromancer	1870,30,0,0,1
+abbey03,120,64,117,53	monster	Necromancer	1870,50,0,0,1
 abbey03,120,64,117,53	monster	Banshee	1867,10,0,0,1
 abbey03,120,64,117,53	monster	Flame Skull	1869,10,0,0,1
