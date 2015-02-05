@@ -10,7 +10,7 @@
 //= 
 //============================================================
 
-prt_in,45,96,2	script	Middle Slot Master#slot	4_F_LUCILE,{
+prt_in,45,96,2	script	Middle Headgear Master#slot	4_F_LUCILE,{
 	setarray .@hats,
 		19001,	1059,600,916,300,7512,100,7451,1,1030,1,-1,20000000,
 		19002,	1059,600,916,300,7512,100,7451,1,1030,1,-1,20000000,
@@ -85,9 +85,9 @@ prt_in,45,96,2	script	Middle Slot Master#slot	4_F_LUCILE,{
 		.@endIndex++;
 	}
 	
-		mes "[Headgear Master] ";
-	mes "I can make any hat you wish for, as long as you bring me all the ingredients!";
-	mes "Which hat would you like to know more about?";
+		mes "[Middle Headgear Master] ";
+	mes "I can slot any middle headgear you wish for, as long as you bring me all the ingredients!";
+	mes "What do you want me to slot for you?";
 	next;
 	
 	while(1) {
@@ -97,7 +97,7 @@ prt_in,45,96,2	script	Middle Slot Master#slot	4_F_LUCILE,{
 			close;
 		}
 		
-		//mes "[Headgear Master]";
+		//mes "[Middle Headgear Master]";
 		mes "~ Recipe for ^009900" + getitemname(.@hats[.@j * .@count]) + "^000000 ~";
 		mes " ";
 		
@@ -112,9 +112,9 @@ prt_in,45,96,2	script	Middle Slot Master#slot	4_F_LUCILE,{
 		}
 		
 		next;
-		switch(select("Create the hat:I changed my mind!")) {
+		switch(select("Slot The Middle Headgear:I changed my mind!")) {
 			case 1:
-				mes "[Headgear Master]";
+				mes "[Middle Slot Master]";
 				
 				.@hasItems = 1;
 				
