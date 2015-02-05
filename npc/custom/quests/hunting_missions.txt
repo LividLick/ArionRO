@@ -37,7 +37,7 @@ function Chk; function Cm;
 		set #Mission_Delay,1;
 		close;
 	}
-	mes rand(2)?"Working hard, as always...":"Not slacking, I hope...";
+	mes rand(2)?"Working hard, as always...":"Not slacking, I hope....";
 	mes "Is there anything I can help";
 	mes "you with?";
 	mes " ";
