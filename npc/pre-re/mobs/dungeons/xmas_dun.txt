@@ -31,6 +31,6 @@ xmas_dun01,0,0,0,0	monster	Angeling	1096,1,3600000,1800000,0
 xmas_dun02,0,0,0,0	monster	Christmas Cookie	1246,40,0,0,0
 xmas_dun02,0,0,0,0	monster	Cookie	1265,40,0,0,0
 xmas_dun02,0,0,0,0	monster	Cruiser	1248,85,0,0,0
-xmas_dun02,0,0,0,0	monster	Myst Case	1249,400,0,0,0
+xmas_dun02,0,0,0,0	monster	Myst Case	1249,250,0,0,0
 xmas_dun02,0,0,0,0	monster	Garm Baby	1515,6,1800000,0,0
 xmas_dun02,0,0,0,0	boss_monster	Stormy Knight	1251,1,3600000,600000,0
