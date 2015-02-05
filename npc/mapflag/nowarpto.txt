@@ -156,4 +156,4 @@ bossnia_03	mapflag	nowarpto
 bossnia_04	mapflag	nowarpto
 
 // Pronter Hat Shop ==============
-prt_in   mapflag nowarpto
+prt_in	mapflag nowarp
