@@ -142,7 +142,7 @@ spl_in01	mapflag	nowarpto
 2@orcs	mapflag	nowarpto
 
 // Nidhoggr's Instance ===========
-1@nyd   mapflag	nowarpto
+1@nyd	mapflag	nowarpto
 2@nyd	mapflag	nowarpto
 
 // Poring War ====================
