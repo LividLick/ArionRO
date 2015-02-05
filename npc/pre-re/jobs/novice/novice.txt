@@ -73,10 +73,25 @@ new_1-2,100,29,4	script	Receptionist#nv1	4_M_04,{
 		close;
 	}
 	mes "[Training Grounds Receptionist]";
-	mes "Welcome!";
+	mes "Welcome to ArionRO!";
 	mes "You are at the entrance";
 	mes "of the ^3355FFTraining Grounds^000000.";
 	next;
+	
+	mes "[Training Grounds Receptionist]";
+	mes "Before you go any further, you must agree to the server rules. Type in";
+	mes "\"^ff0000I agree to the server rules^000000\", without the quotes.";
+	next;
+	
+	input .@serverrules$;
+	if (!(.@serverrules$=="I agree to the server rules" ||
+		.@serverrules$=="i agree to the server rules")) {
+		mes "[Training Grounds Receptionist]";
+		mes "Sorry, make sure you've written";
+		mes "the line exactly as it shows.";
+		close;
+	}
+	
 	mes "[Training Grounds Receptionist]";
 	mes "If you're new";
 	mes "to the Ragnarok world,";

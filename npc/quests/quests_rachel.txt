@@ -5265,6 +5265,7 @@ ra_temin,277,159,3	script	High Priest Zhed#rachel	4_M_RACHOLD1,{
 		ra_tem_q = 0;
 		cutin "",255;
 		completequest 8105;
+		getitem 20505,1;
 		specialeffect2 EF_ABSORBSPIRITS;
 		if (checkre(3))
 			getexp 90000,60000;

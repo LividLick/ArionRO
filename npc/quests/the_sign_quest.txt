@@ -10901,6 +10901,7 @@ que_sign01,45,227,4	script	Queen of the Dead	2_F_SIGN1,{
 		next;
 		sign_q = 144;
 		getitem 7025,1; //Lucifer's_Lament
+		getitem 20506,1;
 		mes "[Lady Hell]";
 		mes "^8C1717Although you may also know";
 		mes "this object as God's Tear Drop, keep in mind that history, as you humans know it, may actually be different than the truth.^000000";
@@ -12270,7 +12271,7 @@ OnTimer45000:
 
 geffen,119,48,0	script	Fountain#s	HIDDEN_NPC,{
 	callfunc "F_UpdateSignVars";
-	if (countitem(7025) > 0) {
+	if (countitem(7025) > 0 || countitemall(20506) > 0) {
 		mes "^3355FFAs you approach the fountain,";
 		mes "a strange light begins to emit from the Lucifer's Lament in your pocket and from something deep within";
 		mes "the fountain's water.^000000";

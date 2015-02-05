@@ -394,6 +394,50 @@ ACMD(send)
 //	atcommand_mapmove(fd, sd, command, new_message, info);
 //}
 
+ACMD(gmroom) {
+	char map_name[MAP_NAME_LENGTH_EXT] = "gm_room";
+	unsigned short map_index;
+	short x = 54, y = 45;
+	int16 m = -1;
+
+	map_index = mapindex->name2id(map_name);
+
+	if (map_index)
+		m = map->mapindex2mapid(map_index);
+
+	if (!map_index || m < 0) { // m < 0 means on different server or that map is disabled! [Kevin]
+		clif->message(fd, msg_txt(1)); // Map not found.
+		return false;
+	}
+
+	if( sd->bl.m == m && sd->bl.x == x && sd->bl.y == y ) {
+		clif->message(fd, msg_txt(253)); // You already are at your destination!
+		return false;
+	}
+
+	if ((x || y) && map->getcell(m, x, y, CELL_CHKNOPASS) && pc_get_group_level(sd) < battle_config.gm_ignore_warpable_area) {
+		//This is to prevent the pc->setpos call from printing an error.
+		clif->message(fd, msg_txt(2));
+		if (!map->search_freecell(NULL, m, &x, &y, 10, 10, 1))
+			x = y = 0; //Invalid cell, use random spot.
+	}
+	if (map->list[m].flag.nowarpto && !pc_has_permission(sd, PC_PERM_WARP_ANYWHERE)) {
+		clif->message(fd, msg_txt(247));
+		return false;
+	}
+	if (sd->bl.m >= 0 && map->list[sd->bl.m].flag.nowarp && !pc_has_permission(sd, PC_PERM_WARP_ANYWHERE)) {
+		clif->message(fd, msg_txt(248));
+		return false;
+	}
+	if (pc->setpos(sd, map_index, x, y, CLR_TELEPORT) != 0) {
+		clif->message(fd, msg_txt(1)); // Map not found.
+		return false;
+	}
+
+	clif->message(fd, msg_txt(0)); // Warped.
+	return true;
+}
+
 /*==========================================
  * @rura, @warp, @mapmove
  *------------------------------------------*/
@@ -9381,6 +9425,7 @@ void atcommand_basecommands(void) {
 		ACMD_DEF(kill),
 		ACMD_DEF(alive),
 		ACMD_DEF(kami),
+		ACMD_DEF(gmroom),
 		ACMD_DEF2("kamib", kami),
 		ACMD_DEF2("kamic", kami),
 		ACMD_DEF2("lkami", kami),

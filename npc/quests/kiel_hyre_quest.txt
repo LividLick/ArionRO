@@ -1839,6 +1839,22 @@ kh_school,188,185,0	script	Window#kh2	HIDDEN_NPC,{
 // Grave/Kiel Hyre dungeon entry
 //----------------------------------------------------------------------------
 yuno_fild08,71,170,0	script	Grave#kh	HIDDEN_NPC,{
+	if (countitemall(20504) > 0) {
+		mes "^3355FFThe door to the";
+		mes "factory is wide open.^000000";
+		next;
+		switch(select("Enter:Cancel")) {
+		case 1:
+			warp "kh_dun01",3,230;
+			end;
+		case 2:
+			mes "......";
+			mes ".........";
+			mes "............";
+			close;
+		}
+	}
+	
 	if (KielHyreQuest < 36) {
 		mes "^3355FFIt's just a grave.";
 		mes "It might be important";
@@ -3754,6 +3770,26 @@ OnTouch:
 // Robot Factory Second Floor Entrances
 //----------------------------------------------------------------------------
 kh_dun01,44,203,0	script	Entrance Device#khd2::KHAccess	HIDDEN_NPC,{
+	if (countitemall(20504) > 0) {
+		mes "^3355FFAs you insert the";
+		mes "Kiel Dungeon Quest Pass";
+		mes "into the keycard slot,";
+		mes "the door swings open";
+		mes "to reveal a long flight";
+		mes "of descending stairs.^000000";
+		next;
+		switch(select("Descend Stairs:Cancel")) {
+		case 1:
+			warp "kh_dun02",41,198;
+			end;
+		case 2:
+			mes "^3355FFIt looks like this door";
+			mes "has automatically closed";
+			mes "after the preprogrammed";
+			mes "time limit has elapsed.^000000";
+			close;
+		}
+	}
 	if (countitem(7509) < 1) {
 		mes "^3355FFYou encounter";
 		mes "a mechanical device.";
@@ -4650,6 +4686,7 @@ kh_mansion,22,28,4	script	Kiel Hyre#kh	4_M_KHKYEL,{
 		mes "deepest levels of the factory.";
 		mes "I'll investigate Kiehl's room.";
 		getitem 7509,1; //Fancy_Key_Card
+		getitem 20504,1;
 		KielHyreQuest = 108;
 		next;
 		if (Sex == 0) {
