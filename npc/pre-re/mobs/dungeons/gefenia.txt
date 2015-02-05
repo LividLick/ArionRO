@@ -15,9 +15,9 @@
 //==================================================
 // gefenia01 - Geffenia
 //==================================================
-gefenia01,0,0,0,0	monster	False Angel	1371,60,0,0,0
-gefenia01,0,0,0,0	monster	Succubus	1370,10,0,0,0
-gefenia01,0,0,0,0	monster	Incubus	1374,10,0,0,0
+gefenia01,0,0,0,0	monster	False Angel	1371,20,0,0,0
+gefenia01,0,0,0,0	monster	Succubus	1370,30,0,0,0
+gefenia01,0,0,0,0	monster	Incubus	1374,30,0,0,0
 gefenia01,0,0,0,0	monster	Violy	1390,30,0,0,0
 gefenia01,0,0,0,0	monster	Mini Demon	1292,20,0,0,0
 gefenia01,0,0,0,0	monster	Abysmal Knight	1219,10,0,0,0
@@ -30,8 +30,8 @@ gefenia01,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
 // gefenia02 - Geffenia
 //==================================================
 gefenia02,0,0,0,0	monster	False Angel	1371,30,0,0,0
-gefenia02,0,0,0,0	monster	Succubus	1370,20,0,0,0
-gefenia02,0,0,0,0	monster	Incubus	1374,10,0,0,0
+gefenia02,0,0,0,0	monster	Succubus	1370,50,0,0,0
+gefenia02,0,0,0,0	monster	Incubus	1374,70,0,0,0
 gefenia02,0,0,0,0	monster	Violy	1390,40,0,0,0
 gefenia02,0,0,0,0	monster	Mini Demon	1292,30,0,0,0
 gefenia02,0,0,0,0	monster	Abysmal Knight	1219,10,0,0,0
@@ -44,8 +44,8 @@ gefenia02,0,0,0,0	monster	Ogretooth	1204,1,10800000,7200000,0
 // gefenia03 - Geffenia
 //==================================================
 gefenia03,0,0,0,0	monster	False Angel	1371,40,0,0,0
-gefenia03,0,0,0,0	monster	Succubus	1370,10,0,0,0
-gefenia03,0,0,0,0	monster	Incubus	1374,20,0,0,0
+gefenia03,0,0,0,0	monster	Succubus	1370,50,0,0,0
+gefenia03,0,0,0,0	monster	Incubus	1374,40,0,0,0
 gefenia03,0,0,0,0	monster	Violy	1390,40,0,0,0
 gefenia03,0,0,0,0	monster	Mini Demon	1292,30,0,0,0
 gefenia03,0,0,0,0	monster	Abysmal Knight	1219,10,0,0,0
@@ -58,8 +58,8 @@ gefenia03,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
 // gefenia04 - Geffenia
 //==================================================
 gefenia04,0,0,0,0	monster	False Angel	1371,30,0,0,0
-gefenia04,0,0,0,0	monster	Succubus	1370,10,600000,300000,0
-gefenia04,0,0,0,0	monster	Incubus	1374,10,600000,300000,0
+gefenia04,0,0,0,0	monster	Succubus	1370,60,600000,300000,0
+gefenia04,0,0,0,0	monster	Incubus	1374,50,600000,300000,0
 gefenia04,0,0,0,0	monster	Violy	1390,30,0,0,0
 gefenia04,0,0,0,0	monster	Mini Demon	1292,20,0,0,0
 gefenia04,0,0,0,0	monster	Abysmal Knight	1219,10,0,0,0
