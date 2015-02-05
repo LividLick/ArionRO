@@ -30,8 +30,8 @@ gefenia01,0,0,0,0	monster	Ogretooth	1204,1,18000000,14400000,0
 // gefenia02 - Geffenia
 //==================================================
 gefenia02,0,0,0,0	monster	False Angel	1371,30,0,0,0
-gefenia02,0,0,0,0	monster	Succubus	1370,100,0,0,0
-gefenia02,0,0,0,0	monster	Incubus	1374,100,0,0,0
+gefenia02,0,0,0,0	monster	Succubus	1370,60,0,0,0
+gefenia02,0,0,0,0	monster	Incubus	1374,60,0,0,0
 gefenia02,0,0,0,0	monster	Violy	1390,40,0,0,0
 gefenia02,0,0,0,0	monster	Mini Demon	1292,30,0,0,0
 gefenia02,0,0,0,0	monster	Abysmal Knight	1219,10,0,0,0
