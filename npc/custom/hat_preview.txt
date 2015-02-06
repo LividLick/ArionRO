@@ -1,11 +1,11 @@
 //===== Hercules Script ======================================
 //= Hat Girl
 //===== By: ==================================================
-//= Toms and Tokeiburu
+//= ??
 //===== Current Version: =====================================
 //= 1.0
 //===== Description: =========================================
-//= Create hats.
+//= Preview hats.
 //===== Additional Comments: =================================
 //= 
 //============================================================
@@ -28,19 +28,25 @@ INTRO:
 	set @equip, getiteminfo(@itemid, 5);
 	set @view, getiteminfo(@itemid, 11);
 
-	if(@equip != -1 && @view > 0) {
+	if(@equip > 0 && @view > 0 && (@equip & 1 || @equip & 256 || @equip & 512)) {
+		mes @equip;
+		next;
+		
 		if(@equip & 1)
 			atcommand "@changelook 3 " + @view;
 		if(@equip & 256)
 			atcommand "@changelook 1 " + @view;
 		if(@equip & 512) 
 			atcommand "@changelook 2 " + @view;
-			
+		
+		
+		dispbottom "Displaying " + getitemname(@itemid) + ".";
+		
 		mes "^00A000There you go!^000000";
 		next;
 	}
 	else {
-		mes "^ff0000Item not found!^000000";
+		mes "^ff0000Item not found or the item is not a headgear!^000000";
 		next;
 	}
 	
