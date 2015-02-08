@@ -1,7 +1,8 @@
 //===== Hercules Script ======================================
-//= Hat Girl
+//= Hat Preview Girl
 //===== By: ==================================================
 //= ??
+//= Modified by Tokeiburu
 //===== Current Version: =====================================
 //= 1.0
 //===== Description: =========================================
@@ -11,7 +12,6 @@
 //============================================================
 
 prt_in,43,96,7	script	Preview Headgear	4_F_NYDHOG,{
-    //save current look for later
     set @bottomview, getlook(3);
     set @topview, getlook(4);
     set @midview, getlook(5);
@@ -20,44 +20,111 @@ prt_in,43,96,7	script	Preview Headgear	4_F_NYDHOG,{
     addtimer 1000, strnpcinfo(3)+"::On_Leave";
 
 INTRO:
-	mes "Welcome to the preview NPC";
-	mes "Please input an itemID you would like to preview";
-	input @itemid;
+	mes "[Preview Headgear]";
+	mes "Welcome to the preview NPC!";
+	mes "How can I help you?";
 
-	//modifies char's look based on item
-	set @equip, getiteminfo(@itemid, 5);
-	set @view, getiteminfo(@itemid, 11);
+MainSelection:
+	switch(select("View headgears from list:View headgears from item ID:Cancel")) {
+		case 2:
+InputItem:
+			mes "Please input an item ID you would like to preview";
+			input @itemid;
+			
+			set @equip, getiteminfo(@itemid, 5);
+			set @view, getiteminfo(@itemid, 11);
+			
+			if(@equip > 0 && @view > 0 && (@equip & 769) != 0) {
+				if(@equip & 1)
+					atcommand "@changelook 3 " + @view;
+				if(@equip & 256)
+					atcommand "@changelook 1 " + @view;
+				if(@equip & 512) 
+					atcommand "@changelook 2 " + @view;
+				
+				dispbottom "Displaying " + getitemname(@itemid) + ".";
+				
+				mes "^00A000There you go!^000000";
+				next;
+			}
+			else {
+				mes "^ff0000Item not found or the item is not a headgear!^000000";
+				next;
+			}
+			
+			mes "[Preview Headgear]";
+			mes "Would to like to preview something else?";
+			if(select("Yes", "No") == 1) {
+				goto InputItem;
+			}
+			
+			goto MainSelection;
+		case 1:
+SelectItem:
+				.@s = select( .alphabet_menu$ + ":Back" ) -1;
+				
+				if (.@s >= getarraysize(.sub_menus$)) {
+					goto MainSelection;
+				}
 
-	if(@equip > 0 && @view > 0 && (@equip & 1 || @equip & 256 || @equip & 512)) {
-		mes @equip;
-		next;
-		
-		if(@equip & 1)
-			atcommand "@changelook 3 " + @view;
-		if(@equip & 256)
-			atcommand "@changelook 1 " + @view;
-		if(@equip & 512) 
-			atcommand "@changelook 2 " + @view;
-		
-		
-		dispbottom "Displaying " + getitemname(@itemid) + ".";
-		
-		mes "^00A000There you go!^000000";
-		next;
+SubSelect:				
+				.@sub = select(.sub_menus$[.@s] + ":Back") - 1;
+				
+				@itemid = .sub_menusIndexes[50 * .@s + .@sub];
+				
+				if (@itemid == 0) {
+					goto SelectItem;
+				}
+				
+				set @equip, getiteminfo(@itemid, 5);
+				set @view, getiteminfo(@itemid, 11);
+				
+				if(@equip > 0 && @view > 0 && (@equip & 769) != 0) {
+					if(@equip & 1)
+						atcommand "@changelook 3 " + @view;
+					if(@equip & 256)
+						atcommand "@changelook 1 " + @view;
+					if(@equip & 512) 
+						atcommand "@changelook 2 " + @view;
+				}
+				else {
+					mes "^ff0000Item not found or the item is not a headgear!^000000";
+					next;
+				}
+				
+				goto SubSelect;
+		case 3:
+			goto InnerLeave;
 	}
-	else {
-		mes "^ff0000Item not found or the item is not a headgear!^000000";
-		next;
+
+InnerLeave:
+	mes "See you around!";
+	goto On_Leave;
+OnInit:
+	if (checkre(0)) {
+		.@item_db$ = "item_db_re";
+	} else {
+		.@item_db$ = "item_db";
 	}
 	
-	mes "Would to like to preview something else?";
-	if(select("Yes", "No") == 1) {
-		goto INTRO;
-	}
+	freeloop 1;
+	.@total = query_sql( "SELECT DISTINCT LEFT( `name_english`, 1 ) AS alphabets FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 GROUP BY `name_english` ORDER BY alphabets;", .alphabet$ );
+	
+	for (.@i = 0; .@i < .@total; .@i++) {
+		.alphabet_menu$ = .alphabet_menu$ + .alphabet$[.@i] +" Hats:";
+		.@nb = query_sql( "SELECT `"+ .@item_db$ +"`.`id` FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 AND LEFT( `name_english`, 1 ) = '"+ .alphabet$[.@i] +"' GROUP BY `view` ORDER BY `name_english` LIMIT 128;", .@id );
 
+		for (.@j = 0; .@j < .@nb; .@j++) {
+			.sub_menusIndexes[.@i * 50 + .@j] = .@id[.@j];
+			.sub_menus$[.@i] = .sub_menus$[.@i] + getitemname(.@id[.@j]) + ":";
+		}
+	}
+	freeloop 0;
+	end;
 On_Leave:
     atcommand "@changelook 1 " + @topview;
     atcommand "@changelook 2 " + @midview;
     atcommand "@changelook 3 " + @bottomview;
     close;
 }
+
