@@ -102,14 +102,3 @@ OnInit:
 	sellitem 1148,-1;
 	
 }
-
-prontera,92,209,4	trader	Pet Food Stores#prt1	4_F_NOVICE,{
-OnInit:
-    sellitem Novice_Breast,-1;
-	sellitem Novice_Manteau,-1;
-	sellitem Super_Novice_Hat_,-1;
-    sellitem Novice_Shield,-1;
-	sellitem Hypnotist's_Staff_;
-	sellitem 1148,-1;
-	
-}
