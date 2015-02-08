@@ -10,11 +10,11 @@
 
 prontera,152,193,1	trader	Arion Trader	4_F_GELKA,{
 OnInit:
+	sellitem Blue_Potion,-1;
 	sellitem White_Potion,-1;
 	sellitem Yellow_Potion,-1;
 	sellitem Orange_Potion,-1;
 	sellitem Red_Potion,-1;
-	sellitem Blue_Potion,-1;
 	sellitem Green_Potion,-1;
 	sellitem Berserk_Potion,-1;
 	sellitem Awakening_Potion,-1;
@@ -102,7 +102,7 @@ OnInit:
 	sellitem Novice_Shoes,-1;
 	sellitem Super_Novice_Hat_,-1;
     sellitem Novice_Shield,-1;
-	sellitem Novice_Figure,-1;
+	sellitem 20507,-1;
 	sellitem Hypnotist's_Staff_;
 	sellitem 1148,-1;
 	
