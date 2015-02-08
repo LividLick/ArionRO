@@ -10,21 +10,21 @@
 
 prontera,152,193,1	trader	Arion Trader	4_F_GELKA,{
 OnInit:
+	sellitem White_Potion,-1;
+	sellitem Yellow_Potion,-1;
+	sellitem Orange_Potion,-1;
+	sellitem Red_Potion,-1;
+	sellitem Green_Potion,-1;
+	sellitem Awakening_Potion,-1;
+	sellitem Center_Potion,-1;
+	sellitem Wing_Of_Butterfly,-1;
+	sellitem Wing_Of_Fly,-1;
 	sellitem Spectacles,-1;
-	sellitem Arrow,-1;
-	sellitem 1771,-1;
+	sellitem Booby_Trap,-1;
 	sellitem Fire_Arrow_Container,-1;
 	sellitem Holy_Arrow_Quiver,-1;
-	sellitem Red_Potion,-1;
-	sellitem Orange_Potion,-1;
-	sellitem Yellow_Potion,-1;
-	sellitem White_Potion,-1;
-	sellitem Green_Potion,-1;
-	sellitem Center_Potion,-1;
-	sellitem Awakening_Potion,-1;
-	sellitem Wing_Of_Fly,-1;
-	sellitem Wing_Of_Butterfly,-1;
-	sellitem Booby_Trap,-1;
+	sellitem 1771,-1;
+	sellitem Arrow,-1;
 	sellitem Blue_Gemstone,-1;
 	sellitem Red_Gemstone,-1;
 	sellitem Yellow_Gemstone,-1;

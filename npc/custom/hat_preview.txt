@@ -11,7 +11,7 @@
 //= 
 //============================================================
 
-prt_in,43,96,7	script	Preview Headgear	4_F_NYDHOG,{
+prt_in,45,96,3	script	Preview Headgear	4_F_JOB_ASSASSIN,{
     set @bottomview, getlook(3);
     set @topview, getlook(4);
     set @midview, getlook(5);
