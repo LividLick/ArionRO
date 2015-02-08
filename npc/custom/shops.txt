@@ -14,6 +14,7 @@ OnInit:
 	sellitem Yellow_Potion,-1;
 	sellitem Orange_Potion,-1;
 	sellitem Red_Potion,-1;
+	sellitem Blue_Potion,-1;
 	sellitem Green_Potion,-1;
 	sellitem Berserk_Potion,-1;
 	sellitem Awakening_Potion,-1;
@@ -24,8 +25,8 @@ OnInit:
 	sellitem Booby_Trap,-1;
 	sellitem Fire_Arrow_Container,-1;
 	sellitem Holy_Arrow_Quiver,-1;
+	sellitem Wind_Arrow_Container,-1;
 	sellitem 1771,-1;
-	sellitem Arrow,-1;
 	sellitem Blue_Gemstone,-1;
 	sellitem Red_Gemstone,-1;
 	sellitem Yellow_Gemstone,-1;
@@ -103,3 +104,14 @@ OnInit:
 	sellitem 1148,-1;
 	
 }
+
+prontera,90,209,5	trader	Meat Vendor#prt1	4_F_NOVICE,{
+OnInit:
+    sellitem 517,-1;
+	
+}
+
+prontera,94,209,5	trader	Fruit Vendor#prt1	4_F_NOVICE,{
+OnInit:
+    sellitem Apple,-1;
+
