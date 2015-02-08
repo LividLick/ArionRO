@@ -105,13 +105,13 @@ OnInit:
 	
 }
 
-prontera,90,209,5	trader	Meat Vendor#prt1	4_F_NOVICE,{
+prontera,90,209,5	trader	Meat Shop#prt1	4_F_EINWOMAN,{
 OnInit:
     sellitem 517,-1;
 	
 }
 
-prontera,94,209,5	trader	Fruit Vendor#prt1	4_F_NOVICE,{
+prontera,95,209,5	trader	Fruit Shop#prt1	4_F_FRUIT,{
 OnInit:
     sellitem Apple,-1;
 	
