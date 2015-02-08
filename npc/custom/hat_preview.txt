@@ -66,7 +66,6 @@ SelectItem:
 				if (.@s >= getarraysize(.sub_menus$)) {
 					goto MainSelection;
 				}
-
 SubSelect:				
 				.@sub = select(.sub_menus$[.@s] + ":Back") - 1;
 				
