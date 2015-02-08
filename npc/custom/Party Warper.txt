@@ -1,0 +1,18 @@
+prontera,152,204,0	script	Party Warper	4_F_EDEN_MASTER,{
+	if ( countiem( 501 ) < 10 || !countitem( 514 ) {
+		mes "You need 10 apple and 1 grape";
+		close;
+	}
+	if ( !getcharid( 1 ) ) {
+		mes "You don't have a party";
+		close;
+	}
+	if ( getpartyleader( getcharid( 1 ), 2 ) != getcharid( 0 ) ) {
+		mes "You must be a party leader";
+		close;
+	}
+	delitem 501, 10;
+	delitem 514, 1;
+	warpparty "prontera",150,150,getcharid( 1 );
+	end;
+}
