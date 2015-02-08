@@ -10,21 +10,17 @@
 //= 
 //============================================================
 
-prontera,152,204,7	script	Headgear Master#un_id	4_F_NYDHOG,{
-	if ( countiem( 501 ) < 10 || !countitem( 514 ) {
-		mes "You need 10 apple and 1 grape";
-		close;
-	}
-	if ( !getcharid( 1 ) ) {
-		mes "You don't have a party";
-		close;
-	}
-	if ( getpartyleader( getcharid( 1 ), 2 ) != getcharid( 0 ) ) {
-		mes "You must be a party leader";
-		close;
-	}
-	delitem 501, 10;
-	delitem 514, 1;
-	warpparty "prontera",150,150,getcharid( 1 );
-	end;
+prontera,154,201,1	script	Prontera Warper	4_F_WANDERER,{
+	mes "Hello ^0000FF" + strcharinfo(0) + "^000000,";
+	mes " ";
+	mes "Is your party ready for a adventure of your lifetime?";
+	next;
+
+	menu "Still need time to prepare", L_Close,
+	"Warp me to Dungeon ^0000FF("+getmapusers("prontera")+")^000000", L_Warp;
+	
+L_Warp:
+	warp "prontera",154 + rand(1, 4),205 - rand(1, 4);
+L_Close:
+	close;
 }
