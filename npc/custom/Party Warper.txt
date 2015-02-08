@@ -1,4 +1,16 @@
-prontera,152,204,0	script	Party Warper	4_F_EDEN_MASTER,{
+//===== Hercules Script ======================================
+//= Party Warper
+//===== By: ==================================================
+//= Toms and Tokeiburu
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= Warps party to a dungeon
+//===== Additional Comments: =================================
+//= 
+//============================================================
+
+prt_in,152,204,7	script	Headgear Master#un_id	4_F_NYDHOG,{
 	if ( countiem( 501 ) < 10 || !countitem( 514 ) {
 		mes "You need 10 apple and 1 grape";
 		close;
