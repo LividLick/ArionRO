@@ -1,0 +1,26 @@
+//===== Hercules Script ======================================
+//= Party Warper
+//===== By: ==================================================
+//= Toms and Tokeiburu
+//===== Current Version: =====================================
+//= 1.0
+//===== Description: =========================================
+//= Warps party to a dungeon
+//===== Additional Comments: =================================
+//= 
+//============================================================
+
+prontera,154,201,1	script	Party Warper	4_F_WANDERER,{
+	mes "Hello ^0000FF" + strcharinfo(0) + "^000000,";
+	mes " ";
+	mes "Is your party ready for a adventure of your lifetime?";
+	next;
+
+	menu "Still need time to prepare", L_Close,
+	"Warp me to Dungeon ^0000FF("+getmapusers("thor_v03")+")^000000", L_Warp;
+	
+L_Warp:
+	warp "thor_v03",154 + rand(1, 4),205 - rand(1, 4);
+L_Close:
+	close;
+}
