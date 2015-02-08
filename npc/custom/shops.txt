@@ -15,6 +15,7 @@ OnInit:
 	sellitem Orange_Potion,-1;
 	sellitem Red_Potion,-1;
 	sellitem Green_Potion,-1;
+	sellitem Berserk_Potion,-1;
 	sellitem Awakening_Potion,-1;
 	sellitem Center_Potion,-1;
 	sellitem Wing_Of_Butterfly,-1;
