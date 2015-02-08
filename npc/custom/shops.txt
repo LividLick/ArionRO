@@ -114,4 +114,5 @@ OnInit:
 prontera,94,209,5	trader	Fruit Vendor#prt1	4_F_NOVICE,{
 OnInit:
     sellitem Apple,-1;
-
+	
+}
