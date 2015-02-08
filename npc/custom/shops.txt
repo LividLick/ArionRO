@@ -115,8 +115,8 @@ prontera,95,209,5	trader	Fruit Shop#prt1	4_F_FRUIT,{
 OnInit:
 	sellitem Grape,-1;
     sellitem Apple,-1;
-	sellitem Sweet_Potato,-1;
 	sellitem Banana,-1;
+	sellitem Sweet_Potato,-1;
 	
 	
 }
