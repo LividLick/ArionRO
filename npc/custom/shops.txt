@@ -102,7 +102,7 @@ OnInit:
 	sellitem Novice_Shoes,-1;
 	sellitem Super_Novice_Hat_,-1;
     sellitem Novice_Shield,-1;
-	sellitem Novice_Figure,-1;
+	sellitem 20507,-1;
 	sellitem Hypnotist's_Staff_;
 	sellitem 1148,-1;
 	
