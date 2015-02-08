@@ -117,6 +117,7 @@ OnInit:
 	sellitem Grape,-1;
     sellitem Apple,-1;
 	sellitem Banana,-1;
+	sellitem Carrot,-1;
 	sellitem Sweet_Potato,-1;
 	
 	
