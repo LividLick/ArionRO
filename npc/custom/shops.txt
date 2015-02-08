@@ -46,6 +46,7 @@ OnInit:
 	sellitem Slim_Potion_Create_Book,-1;
 	sellitem Empty_Potion,-1;
 	sellitem Medicine_Bowl,-1;
+	sellitem Empty_Bottle,-1;
 	sellitem Empty_Cylinder,-1;
 
 	
