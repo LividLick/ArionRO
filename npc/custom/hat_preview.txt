@@ -107,11 +107,11 @@ OnInit:
 	}
 	
 	freeloop 1;
-	.@total = query_sql( "SELECT DISTINCT LEFT( `name_english`, 1 ) AS alphabets FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 GROUP BY `name_english` ORDER BY alphabets;", .alphabet$ );
+	.@total = query_sql( "SELECT DISTINCT LEFT( `name_japanese`, 1 ) AS alphabets FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 GROUP BY `name_japanese` ORDER BY alphabets;", .alphabet$ );
 	
 	for (.@i = 0; .@i < .@total; .@i++) {
 		.alphabet_menu$ = .alphabet_menu$ + .alphabet$[.@i] +" Hats:";
-		.@nb = query_sql( "SELECT `"+ .@item_db$ +"`.`id` FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 AND LEFT( `name_english`, 1 ) = '"+ .alphabet$[.@i] +"' GROUP BY `view` ORDER BY `name_english` LIMIT 128;", .@id );
+		.@nb = query_sql( "SELECT `"+ .@item_db$ +"`.`id` FROM `"+ .@item_db$ +"` WHERE (`equip_locations`) & 769 != 0 AND `type` = 5 AND LEFT( `name_japanese`, 1 ) = '"+ .alphabet$[.@i] +"' GROUP BY `view` ORDER BY `name_japanese` LIMIT 128;", .@id );
 
 		for (.@j = 0; .@j < .@nb; .@j++) {
 			.sub_menusIndexes[.@i * 50 + .@j] = .@id[.@j];
