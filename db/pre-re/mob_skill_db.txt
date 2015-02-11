@@ -54,13 +54,13 @@
 //	-2: added for all normal types.
 //	-4: added for all mobs.
 
-1001,Scorpion@NPC_FIREATTACK,attack,186,1,2000,0,5000,yes,target,always,0,,,,,,,
+1001,Scorpion@NPC_FIREATTACK,walk,186,1,2000,0,5000,yes,target,always,0,,,,,,,
 1001,Scorpion@NPC_POISON,attack,176,3,500,800,5000,no,target,always,0,,,,,,,
 1002,Poring@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,
 1002,Poring@NPC_WATERATTACK,attack,184,1,2000,0,5000,yes,target,always,0,,,,,,,
 1004,Hornet@NPC_PIERCINGATT,attack,158,2,500,0,5000,yes,target,always,0,,,,,,6,
 1004,Hornet@NPC_WINDATTACK,attack,187,1,2000,0,5000,yes,target,always,0,,,,,,,
-1005,Familiar@NPC_BLINDATTACK,attack,177,1,500,0,5000,yes,target,always,0,,,,,,,
+1005,Familiar@NPC_BLINDATTACK,angry,177,1,500,0,5000,yes,randomtarget,always,0,,,,,,,
 1005,Familiar@NPC_DARKNESSATTACK,attack,190,1,2000,0,5000,yes,target,always,0,,,,,,,
 1005,Familiar@NPC_BLINDATTACK,angry,177,1,500,0,5000,yes,target,always,0,,,,,,,
 1005,Familiar@NPC_DARKNESSATTACK,angry,190,1,2000,0,5000,yes,target,always,0,,,,,,,
